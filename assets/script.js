@@ -2,12 +2,9 @@
   const root = document.documentElement;
   const themeButton = document.getElementById("themeToggle");
   const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   if (savedTheme) {
     root.dataset.theme = savedTheme;
-  } else if (prefersDark) {
-    root.dataset.theme = "dark";
   }
 
   function syncThemeIcon() {
@@ -76,6 +73,14 @@
   searchInput?.addEventListener("input", applyFilters);
   applyFilters();
 
+  document.querySelector("[data-random-post]")?.addEventListener("click", () => {
+    const posts = Array.from(document.querySelectorAll(".post-card .post-link"));
+    const target = posts[Math.floor(Math.random() * posts.length)];
+    if (target) {
+      window.location.href = target.getAttribute("href");
+    }
+  });
+
   const progress = document.querySelector(".reading-progress");
   if (progress) {
     const updateProgress = () => {
@@ -92,11 +97,14 @@
     button.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(window.location.href);
-        const previousText = button.lastChild?.textContent || "";
-        button.lastChild.textContent = "已复制";
-        window.setTimeout(() => {
-          button.lastChild.textContent = previousText;
-        }, 1400);
+        const textNode = Array.from(button.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
+        const previousText = textNode?.textContent || "";
+        if (textNode) {
+          textNode.textContent = " 已复制";
+          window.setTimeout(() => {
+            textNode.textContent = previousText;
+          }, 1400);
+        }
       } catch {
         button.setAttribute("title", "复制失败，请手动复制地址栏链接");
       }

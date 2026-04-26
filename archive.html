@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>归档 | AChao</title>
-  <meta name="description" content="AChao 博客文章归档。">
+  <title>文库 | AChaoBlog</title>
+  <meta name="description" content="AChaoBlog 文章归档。">
   <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -12,15 +12,10 @@
   <a class="skip-link" href="#content">跳到内容</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="AChao 首页"><span class="brand-mark">AC</span><span class="brand-text"><strong>AChao</strong><small>Out of Stack</small></span></a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="index.html">首页</a>
-        <a href="index.html#posts">文章</a>
-        <a href="archive.html" aria-current="page">归档</a>
-        <a href="about.html">关于</a>
-      </nav>
+      <a class="brand" href="index.html" aria-label="AChaoBlog 首页"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><strong>AChaoBlog</strong></a>
+      <nav class="site-nav" aria-label="主导航"><a href="archive.html" aria-current="page">文库</a><a href="index.html#posts">专栏</a><a href="about.html">我的</a></nav>
       <div class="header-actions">
-        <a class="icon-link" href="https://github.com/AChaoRepo" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.99c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.69.92.69 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+        <a class="icon-link" href="index.html#posts" aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
         <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
       </div>
     </div>
@@ -29,53 +24,24 @@
   <main id="content" class="page-shell">
     <section class="page-hero">
       <p class="eyebrow">Archive</p>
-      <h1>文章归档</h1>
-      <p class="lede">按时间保存文章，也可以用搜索和标签快速缩小范围。</p>
+      <h1>文章文库</h1>
+      <p>按时间保存文章，也可以用搜索和标签快速缩小范围。</p>
       <div class="archive-tools">
-        <label class="search-field" for="postSearch">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="postSearch" type="search" placeholder="搜索归档">
-        </label>
-        <div class="filter-row" aria-label="文章标签">
-          <button class="filter-button is-active" type="button" data-filter="all">全部</button>
-          <button class="filter-button" type="button" data-filter="engineering">工程</button>
-          <button class="filter-button" type="button" data-filter="ai">AI</button>
-          <button class="filter-button" type="button" data-filter="notes">笔记</button>
-        </div>
+        <label class="search-field" for="postSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="postSearch" type="search" placeholder="搜索归档"></label>
+        <div class="filter-row" aria-label="文章标签"><button class="filter-button is-active" type="button" data-filter="all">全部</button><button class="filter-button" type="button" data-filter="engineering">技术分享</button><button class="filter-button" type="button" data-filter="notes">学习笔记</button></div>
       </div>
     </section>
 
     <section class="archive-list" id="posts" aria-label="文章列表">
       <div class="archive-year">2026</div>
-      <article class="archive-item" data-title="从零发布 GitHub Pages 个人博客" data-tags="engineering github pages notes">
-        <time datetime="2026-04-26">04-26</time>
-        <div>
-          <h2><a href="posts/github-pages-start.html">从零发布 GitHub Pages 个人博客</a></h2>
-          <p>仓库命名、入口文件、发布路径和上线检查。</p>
-        </div>
-      </article>
-      <article class="archive-item" data-title="和 AI 结对写代码的工作流" data-tags="ai engineering workflow notes">
-        <time datetime="2026-04-20">04-20</time>
-        <div>
-          <h2><a href="posts/ai-coding-workflow.html">和 AI 结对写代码的工作流</a></h2>
-          <p>需求、上下文、验证和复盘如何组成协作闭环。</p>
-        </div>
-      </article>
-      <article class="archive-item" data-title="Out of Stack 的写作清单" data-tags="notes writing system">
-        <time datetime="2026-04-12">04-12</time>
-        <div>
-          <h2><a href="posts/out-of-stack-notes.html">Out of Stack 的写作清单</a></h2>
-          <p>一个轻量的写作质量检查表。</p>
-        </div>
-      </article>
+      <article class="archive-item" data-title="从零发布 GitHub Pages 个人博客" data-tags="engineering github pages notes"><time datetime="2026-04-26">04/26</time><div><h2><a href="posts/github-pages-start.html">从零发布 GitHub Pages 个人博客</a></h2><p>仓库命名、入口文件、发布路径和上线检查。</p></div></article>
+      <article class="archive-item" data-title="和 AI 结对写代码的工作流" data-tags="ai engineering workflow notes"><time datetime="2026-04-20">04/20</time><div><h2><a href="posts/ai-coding-workflow.html">和 AI 结对写代码的工作流</a></h2><p>需求、上下文、验证和复盘如何组成协作闭环。</p></div></article>
+      <article class="archive-item" data-title="Out of Stack 的写作清单" data-tags="notes writing system"><time datetime="2026-04-12">04/12</time><div><h2><a href="posts/out-of-stack-notes.html">Out of Stack 的写作清单</a></h2><p>一个轻量的写作质量检查表。</p></div></article>
       <p class="empty-state" id="noResults" hidden>没有匹配的文章。</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div><strong>AChao</strong><p>Built for GitHub Pages. Keep shipping, keep thinking.</p></div>
-    <p>© <span id="year">2026</span> AChao</p>
-  </footer>
+  <footer class="site-footer"><p>© <span id="year">2026</span> AChaoBlog</p><p>Built for GitHub Pages</p></footer>
   <script src="assets/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">AChao profile scene</title>
+  <desc id="desc">A calm circular illustration with sky, sea and a developer avatar.</desc>
+  <defs>
+    <clipPath id="circle"><circle cx="90" cy="90" r="90"/></clipPath>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-color="#b7e7ff"/>
+      <stop offset="1" stop-color="#fff3c7"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#circle)">
+    <rect width="180" height="180" fill="url(#sky)"/>
+    <path d="M0 112c32-14 58-9 86 0 35 12 60 12 94-4v72H0Z" fill="#4aa6c8"/>
+    <path d="M0 130c36-10 70-6 104 4 27 8 48 6 76-6v52H0Z" fill="#2f7fac"/>
+    <path d="M14 58c10-14 30-13 38 1 12-8 28-4 34 8H14Z" fill="#fff7dc"/>
+    <path d="M112 46c12-9 28-5 34 7 8-4 19-1 24 8h-72c2-7 7-12 14-15Z" fill="#fff7dc"/>
+    <ellipse cx="114" cy="145" rx="48" ry="13" fill="#1f6488" opacity=".25"/>
+    <path d="M116 50c21 0 38 16 38 38v32c0 9-7 16-16 16H94c-9 0-16-7-16-16V88c0-22 17-38 38-38Z" fill="#7a543e"/>
+    <circle cx="116" cy="86" r="30" fill="#ffd7bd"/>
+    <path d="M89 83c8-4 11-14 11-25 16 18 35 8 48 26-1-22-14-41-35-43-23-2-41 15-42 38 4-1 9 0 18 4Z" fill="#4f3b33"/>
+    <circle cx="103" cy="88" r="3" fill="#303133"/>
+    <circle cx="128" cy="88" r="3" fill="#303133"/>
+    <path d="M106 105c8 5 17 5 25 0" fill="none" stroke="#c46f5b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M70 158c7-23 23-36 46-36s39 13 46 36Z" fill="#eef5f9"/>
+    <path d="M96 127h40v36H96Z" fill="#d8e7ee"/>
+    <path d="M54 128c8-11 26-10 32 2 5 10-1 23-14 26-15 3-28-14-18-28Z" fill="#f0a33b"/>
+    <path d="M61 122c2-9 7-15 16-18-2 8 0 14 6 20Z" fill="#f0a33b"/>
+    <circle cx="69" cy="132" r="3" fill="#303133"/>
+    <path d="M77 144c-5 2-10 1-14-2" fill="none" stroke="#8f542a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
