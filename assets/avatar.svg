@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">AChao avatar mark</title>
+  <desc id="desc">A geometric AC monogram for the AChao blog.</desc>
+  <defs>
+    <linearGradient id="bg" x1="30" y1="24" x2="270" y2="276" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f766e"/>
+      <stop offset="0.52" stop-color="#4154b3"/>
+      <stop offset="1" stop-color="#ef5b4c"/>
+    </linearGradient>
+    <linearGradient id="line" x1="70" y1="70" x2="230" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dff9f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="24" fill="#f7f8fb"/>
+  <rect x="28" y="28" width="244" height="244" rx="22" fill="url(#bg)"/>
+  <path d="M82 216 132 84h36l50 132h-36l-10-29h-45l-10 29H82Zm56-61h23l-11-37-12 37Z" fill="url(#line)"/>
+  <path d="M222 93c-16-16-38-24-62-22-42 4-74 39-74 80 0 43 34 78 77 80 25 1 46-7 61-23l-22-24c-10 10-22 15-38 14-24-2-42-21-42-47 0-25 18-45 42-47 15-1 28 4 38 14l20-25Z" fill="#ffffff" opacity=".82"/>
+</svg>

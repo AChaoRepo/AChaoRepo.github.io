@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub Pages article cover</title>
+  <desc id="desc">Layered browser windows and deployment path shapes.</desc>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="640" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dff9f2"/>
+      <stop offset=".55" stop-color="#dfe7ff"/>
+      <stop offset="1" stop-color="#ffe4df"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#17212b" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="640" height="400" fill="url(#a)"/>
+  <path d="M0 312 640 218v182H0Z" fill="#0f766e" opacity=".12"/>
+  <g filter="url(#s)">
+    <rect x="92" y="80" width="456" height="254" rx="14" fill="#ffffff"/>
+    <rect x="92" y="80" width="456" height="48" rx="14" fill="#17212b"/>
+    <circle cx="124" cy="104" r="7" fill="#ef5b4c"/>
+    <circle cx="148" cy="104" r="7" fill="#f0b429"/>
+    <circle cx="172" cy="104" r="7" fill="#62c7b6"/>
+    <rect x="128" y="164" width="160" height="18" rx="9" fill="#0f766e"/>
+    <rect x="128" y="198" width="250" height="12" rx="6" fill="#c7d2fe"/>
+    <rect x="128" y="224" width="204" height="12" rx="6" fill="#c7d2fe"/>
+    <rect x="128" y="262" width="98" height="34" rx="8" fill="#ef5b4c"/>
+    <path d="M402 171h66M435 138v66M395 247h88M439 211v72" stroke="#4154b3" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <path d="M88 356c96-27 163-29 244-4 83 26 147 26 220-1" fill="none" stroke="#17212b" stroke-opacity=".16" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">AI coding workflow article cover</title>
+  <desc id="desc">Connected panels representing context, implementation and verification.</desc>
+  <defs>
+    <linearGradient id="b" x1="0" y1="400" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#121712"/>
+      <stop offset=".48" stop-color="#163c39"/>
+      <stop offset="1" stop-color="#4052a7"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#b)"/>
+  <g opacity=".18" stroke="#ffffff" stroke-width="1">
+    <path d="M0 80h640M0 160h640M0 240h640M0 320h640M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400M480 0v400M560 0v400"/>
+  </g>
+  <g fill="#ffffff">
+    <rect x="84" y="96" width="132" height="88" rx="12" opacity=".96"/>
+    <rect x="254" y="156" width="132" height="88" rx="12" opacity=".96"/>
+    <rect x="424" y="96" width="132" height="88" rx="12" opacity=".96"/>
+    <rect x="424" y="252" width="132" height="72" rx="12" opacity=".96"/>
+  </g>
+  <g fill="#0f766e">
+    <rect x="112" y="124" width="76" height="10" rx="5"/>
+    <rect x="112" y="148" width="52" height="10" rx="5" opacity=".55"/>
+    <rect x="282" y="184" width="76" height="10" rx="5"/>
+    <rect x="282" y="208" width="48" height="10" rx="5" opacity=".55"/>
+    <rect x="452" y="124" width="76" height="10" rx="5"/>
+    <rect x="452" y="148" width="52" height="10" rx="5" opacity=".55"/>
+    <rect x="452" y="280" width="76" height="10" rx="5"/>
+  </g>
+  <path d="M216 140c42 0 42 60 38 60M386 200c38 0 38-60 38-60M490 184v68" fill="none" stroke="#ff8a78" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="150" cy="254" r="48" fill="#62c7b6"/>
+  <path d="m128 254 16 16 32-38" fill="none" stroke="#10130f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

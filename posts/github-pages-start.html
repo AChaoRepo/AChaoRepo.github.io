@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>从零发布 GitHub Pages 个人博客 | AChao</title>
+  <meta name="description" content="从仓库到 GitHub Pages 首页访问路径的发布笔记。">
+  <link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="post">
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">跳到内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="AChao 首页"><span class="brand-mark">AC</span><span class="brand-text"><strong>AChao</strong><small>Out of Stack</small></span></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../index.html#posts" aria-current="page">文章</a>
+        <a href="../archive.html">归档</a>
+        <a href="../about.html">关于</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="https://github.com/AChaoRepo" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.99c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.69.92.69 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="article-shell">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span>/</span><a href="../archive.html">归档</a></nav>
+    <header class="article-header">
+      <p class="eyebrow">Engineering · 2026-04-26</p>
+      <h1>从零发布 GitHub Pages 个人博客</h1>
+      <p class="lede">GitHub Pages 的核心很简单：仓库里有入口文件，Pages 知道从哪里服务它，浏览器就能访问到。</p>
+      <div class="article-actions">
+        <button class="button button-secondary" type="button" data-copy-link>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          复制链接
+        </button>
+      </div>
+      <img class="article-cover" src="../assets/cover-pages.svg" width="960" height="540" alt="">
+    </header>
+
+    <article class="prose">
+      <h2>先确认发布模型</h2>
+      <p>个人主页站点通常使用 <code>username.github.io</code> 这个仓库名，并从仓库根目录读取 <code>index.html</code>。如果仓库属于同名账号，访问路径就是 <code>https://username.github.io</code>。</p>
+      <p>如果仓库名和账号名不一致，它更像一个项目站点，默认访问路径会带上仓库名。上线前先把这件事确认清楚，能省掉很多迷惑时间。</p>
+      <h2>保持静态文件可直接运行</h2>
+      <p>这个博客没有引入构建流程，所有页面都用相对路径引用资源。这样做的好处是本地双击能预览，推送到 GitHub Pages 后也不需要额外安装依赖。</p>
+      <pre><code>index.html
+assets/styles.css
+assets/script.js
+posts/github-pages-start.html</code></pre>
+      <h2>上线前检查</h2>
+      <p>我会检查三件事：根目录是否有 <code>index.html</code>，文章页资源路径是否正确，移动端导航和卡片是否还能稳定排版。全部通过后再提交推送。</p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航">
+      <a href="../archive.html">返回归档</a>
+      <a href="ai-coding-workflow.html">下一篇</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>AChao</strong><p>Built for GitHub Pages. Keep shipping, keep thinking.</p></div>
+    <p>© <span id="year">2026</span> AChao</p>
+  </footer>
+  <script src="../assets/script.js"></script>
+</body>
+</html>
