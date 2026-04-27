@@ -12,7 +12,7 @@
 
 ## 编辑文章
 
-- 首页文章列表在 `index.html` 的 `#posts` 区域。
+- 首页是入口页，完整博客文章列表在 `lab.html` 的 `#posts` 区域。
 - 归档列表在 `archive.html`。
 - 文章正文在 `posts/*.html`。
 - 站点样式在 `assets/styles.css`，交互逻辑在 `assets/script.js`。
