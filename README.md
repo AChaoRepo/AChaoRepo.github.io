@@ -1,6 +1,6 @@
-# AChaoBlog
+# AChao Edge AI Lab
 
-这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 参考了 [blog.ddlyt.top](https://blog.ddlyt.top/) 的布局气质：拼图纹理背景、顶部极简导航、欢迎区、分类条、文章列表和右侧信息卡。
+这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 使用浅蓝粉色的实验室风格，围绕嵌入式系统、深度学习、边缘 AI 部署和工程复盘组织内容。
 
 ## 发布
 

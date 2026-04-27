@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">Edge AI board</title>
+  <desc id="desc">A light blue and pink illustration of an embedded AI board and neural network.</desc>
+  <defs>
+    <linearGradient id="board" x1="80" y1="76" x2="396" y2="294" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dff3ff"/>
+      <stop offset=".55" stop-color="#eef5ff"/>
+      <stop offset="1" stop-color="#ffe5f0"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="160" y1="112" x2="326" y2="260" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5aa9ff"/>
+      <stop offset="1" stop-color="#ff8db7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#5a90c8" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <rect width="520" height="360" rx="28" fill="#f8fcff"/>
+  <path d="M42 92h70M42 146h92M42 214h72M398 78h78M392 148h88M404 226h72M132 46v52M216 42v58M324 48v64M146 292v40M250 274v50M342 286v36" stroke="#a9d8ff" stroke-width="7" stroke-linecap="round"/>
+  <g filter="url(#shadow)">
+    <rect x="112" y="82" width="296" height="206" rx="28" fill="url(#board)" stroke="#b9dcfb"/>
+    <rect x="174" y="118" width="134" height="134" rx="24" fill="url(#chip)"/>
+    <rect x="200" y="144" width="82" height="82" rx="16" fill="rgba(255,255,255,.32)" stroke="#fff" stroke-width="4"/>
+    <path d="M220 184h42M241 163v42" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#6cc7ea">
+      <circle cx="146" cy="118" r="9"/>
+      <circle cx="146" cy="252" r="9"/>
+      <circle cx="374" cy="118" r="9"/>
+      <circle cx="374" cy="252" r="9"/>
+    </g>
+  </g>
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <path d="M342 136c26-26 58-24 76-2" stroke="#5aa9ff"/>
+    <path d="M340 184c34-10 62 0 84 28" stroke="#ff8db7"/>
+    <path d="M338 226c32 18 54 17 82-4" stroke="#66d6e8"/>
+  </g>
+  <g fill="#fff" stroke="#6fb8ff" stroke-width="4">
+    <circle cx="430" cy="126" r="15"/>
+    <circle cx="452" cy="204" r="15"/>
+    <circle cx="422" cy="236" r="15"/>
+  </g>
+  <path d="M76 318c74-28 132-30 204-8 58 17 108 15 170-14" fill="none" stroke="#ffbed7" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+</svg>

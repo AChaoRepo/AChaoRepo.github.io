@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Lab avatar</title>
+  <desc id="desc">A stylized embedded AI lab avatar with a chip and neural nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="22" y1="20" x2="158" y2="160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dff3ff"/>
+      <stop offset=".5" stop-color="#e8f1ff"/>
+      <stop offset="1" stop-color="#ffe3ef"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="180" height="180" rx="34"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="180" height="180" fill="url(#bg)"/>
+    <path d="M12 48h44v28h36M18 136h44v-34h34M130 26v42h34M124 140h42" fill="none" stroke="#91cfff" stroke-width="5" stroke-linecap="round"/>
+    <g fill="#fff" stroke="#80c6ff" stroke-width="4">
+      <circle cx="56" cy="48" r="8"/>
+      <circle cx="92" cy="76" r="8"/>
+      <circle cx="96" cy="102" r="8"/>
+      <circle cx="130" cy="68" r="8"/>
+      <circle cx="124" cy="140" r="8"/>
+    </g>
+    <rect x="50" y="58" width="82" height="82" rx="22" fill="#fff" stroke="#c3e3ff"/>
+    <rect x="68" y="76" width="46" height="46" rx="12" fill="#5aa9ff"/>
+    <path d="M82 99h20M92 89v20" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M42 150c10-28 28-42 50-42s40 14 50 42Z" fill="#ff8db7" opacity=".9"/>
+    <circle cx="90" cy="76" r="27" fill="#ffd8c6"/>
+    <path d="M65 77c9-2 17-10 20-22 12 16 28 13 37 27-2-21-15-35-35-35-19 0-32 13-34 31 3 0 7 0 12-1Z" fill="#34475c"/>
+    <circle cx="80" cy="80" r="3" fill="#1f2d3d"/>
+    <circle cx="101" cy="80" r="3" fill="#1f2d3d"/>
+    <path d="M82 94c6 4 13 4 19 0" fill="none" stroke="#e58478" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

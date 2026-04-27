@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>边缘设备上的轻量化推理笔记 | AChao Edge AI Lab</title>
+  <meta name="description" content="从 ONNX、量化、算子支持和延迟评估看边缘 AI 推理部署。">
+  <link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="post">
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">跳到内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="AChao Edge AI Lab 首页"><span class="brand-chip" aria-hidden="true"></span><span><strong>AChao Lab</strong><small>Embedded · Deep Learning</small></span></a>
+      <nav class="site-nav" aria-label="主导航"><a href="../archive.html">文库</a><a href="../index.html#posts" aria-current="page">实验笔记</a><a href="../about.html">关于</a></nav>
+      <div class="header-actions"><a class="icon-link" href="../archive.html" aria-label="返回文库"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2Z"/><path d="M8 8h6M8 12h6"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button></div>
+    </div>
+  </header>
+
+  <main id="content" class="article-shell">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span>/</span><a href="../archive.html">文库</a></nav>
+    <header class="article-header">
+      <p class="eyebrow">Edge AI · 2026-04-27</p>
+      <h1>边缘设备上的轻量化推理笔记</h1>
+      <p class="lede">端侧推理不是把模型导出来就结束，而是让模型、算子、内存和实时性在同一块板子上达成协议。</p>
+      <div class="article-actions"><button class="button primary" type="button" data-copy-link><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>复制链接</button></div>
+      <img class="article-cover" src="../assets/edge-ai-board.svg" width="960" height="540" alt="">
+    </header>
+
+    <article class="prose">
+      <h2>先固定可测指标</h2>
+      <p>部署前先确定三组指标：输入尺寸、目标延迟和允许精度损失。没有这些边界，量化和剪枝就很容易变成“看起来更小”，但无法判断是否真的适合设备。</p>
+      <h2>导出链路尽量短</h2>
+      <p>常见路径是从训练框架导出 ONNX，再转到推理引擎或厂商工具链。每多一次转换，就多一层算子兼容风险。复杂模型最好先做最小子图验证。</p>
+      <pre><code>model.pt -> model.onnx -> int8 calibration -> target runtime</code></pre>
+      <h2>量化不是最后一步</h2>
+      <p>INT8 之后还要看内存峰值、DMA 访存、预处理耗时和后处理耗时。真正的端侧延迟通常不是单个卷积层决定的，而是完整数据链路决定的。</p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航"><a href="../archive.html">返回文库</a><a href="rtos-scheduler.html">下一篇</a></nav>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year">2026</span> AChao Edge AI Lab</p><p>Embedded systems, deep learning, and notes from the bench.</p></footer>
+  <script src="../assets/script.js"></script>
+</body>
+</html>

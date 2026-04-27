@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>文库 | AChaoBlog</title>
-  <meta name="description" content="AChaoBlog 文章归档。">
+  <title>文库 | AChao Edge AI Lab</title>
+  <meta name="description" content="AChao Edge AI Lab 文章归档。">
   <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -12,36 +12,35 @@
   <a class="skip-link" href="#content">跳到内容</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="AChaoBlog 首页"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><strong>AChaoBlog</strong></a>
-      <nav class="site-nav" aria-label="主导航"><a href="archive.html" aria-current="page">文库</a><a href="index.html#posts">专栏</a><a href="about.html">我的</a></nav>
-      <div class="header-actions">
-        <a class="icon-link" href="index.html#posts" aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
-        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button>
-      </div>
+      <a class="brand" href="index.html" aria-label="AChao Edge AI Lab 首页"><span class="brand-chip" aria-hidden="true"></span><span><strong>AChao Lab</strong><small>Embedded · Deep Learning</small></span></a>
+      <nav class="site-nav" aria-label="主导航"><a href="archive.html" aria-current="page">文库</a><a href="index.html#posts">实验笔记</a><a href="about.html">关于</a></nav>
+      <div class="header-actions"><a class="icon-link" href="index.html#posts" aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button></div>
     </div>
   </header>
 
   <main id="content" class="page-shell">
     <section class="page-hero">
       <p class="eyebrow">Archive</p>
-      <h1>文章文库</h1>
-      <p>按时间保存文章，也可以用搜索和标签快速缩小范围。</p>
+      <h1>实验文库</h1>
+      <p>按主题沉淀嵌入式、深度学习、边缘 AI 和工程复盘。可以用搜索和标签快速缩小范围。</p>
       <div class="archive-tools">
-        <label class="search-field" for="postSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="postSearch" type="search" placeholder="搜索归档"></label>
-        <div class="filter-row" aria-label="文章标签"><button class="filter-button is-active" type="button" data-filter="all">全部</button><button class="filter-button" type="button" data-filter="engineering">技术分享</button><button class="filter-button" type="button" data-filter="notes">学习笔记</button></div>
+        <label class="search-field" for="postSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="postSearch" type="search" placeholder="搜索 MCU、RTOS、ONNX、量化"></label>
+        <div class="filter-row" aria-label="文章标签"><button class="filter-button is-active" type="button" data-filter="all">全部</button><button class="filter-button" type="button" data-filter="embedded">嵌入式</button><button class="filter-button" type="button" data-filter="deeplearning">深度学习</button><button class="filter-button" type="button" data-filter="edgeai">边缘 AI</button><button class="filter-button" type="button" data-filter="notes">学习笔记</button></div>
       </div>
     </section>
 
     <section class="archive-list" id="posts" aria-label="文章列表">
       <div class="archive-year">2026</div>
+      <article class="archive-item" data-title="边缘设备上的轻量化推理笔记" data-tags="edgeai deeplearning embedded int8 onnx"><time datetime="2026-04-27">04/27</time><div><h2><a href="posts/edge-ai-inference.html">边缘设备上的轻量化推理笔记</a></h2><p>从 ONNX 到 INT8，看精度、延迟、内存和算子支持。</p></div></article>
+      <article class="archive-item" data-title="从 RTOS 任务调度理解嵌入式系统" data-tags="embedded rtos scheduler notes"><time datetime="2026-04-27">04/27</time><div><h2><a href="posts/rtos-scheduler.html">从 RTOS 任务调度理解嵌入式系统</a></h2><p>用任务、优先级、队列和中断拆开实时系统。</p></div></article>
       <article class="archive-item" data-title="从零发布 GitHub Pages 个人博客" data-tags="engineering github pages notes"><time datetime="2026-04-26">04/26</time><div><h2><a href="posts/github-pages-start.html">从零发布 GitHub Pages 个人博客</a></h2><p>仓库命名、入口文件、发布路径和上线检查。</p></div></article>
-      <article class="archive-item" data-title="和 AI 结对写代码的工作流" data-tags="ai engineering workflow notes"><time datetime="2026-04-20">04/20</time><div><h2><a href="posts/ai-coding-workflow.html">和 AI 结对写代码的工作流</a></h2><p>需求、上下文、验证和复盘如何组成协作闭环。</p></div></article>
+      <article class="archive-item" data-title="和 AI 结对写代码的工作流" data-tags="deeplearning ai engineering workflow notes"><time datetime="2026-04-20">04/20</time><div><h2><a href="posts/ai-coding-workflow.html">和 AI 结对写代码的工作流</a></h2><p>需求、上下文、验证和复盘如何组成协作闭环。</p></div></article>
       <article class="archive-item" data-title="Out of Stack 的写作清单" data-tags="notes writing system"><time datetime="2026-04-12">04/12</time><div><h2><a href="posts/out-of-stack-notes.html">Out of Stack 的写作清单</a></h2><p>一个轻量的写作质量检查表。</p></div></article>
       <p class="empty-state" id="noResults" hidden>没有匹配的文章。</p>
     </section>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year">2026</span> AChaoBlog</p><p>Built for GitHub Pages</p></footer>
+  <footer class="site-footer"><p>© <span id="year">2026</span> AChao Edge AI Lab</p><p>Embedded systems, deep learning, and notes from the bench.</p></footer>
   <script src="assets/script.js"></script>
 </body>
 </html>

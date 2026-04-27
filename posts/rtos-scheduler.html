@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>从 RTOS 任务调度理解嵌入式系统 | AChao Edge AI Lab</title>
+  <meta name="description" content="用任务、优先级、队列和中断理解 RTOS 调度。">
+  <link rel="icon" href="../assets/avatar.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="post">
+  <div class="reading-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#content">跳到内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html" aria-label="AChao Edge AI Lab 首页"><span class="brand-chip" aria-hidden="true"></span><span><strong>AChao Lab</strong><small>Embedded · Deep Learning</small></span></a>
+      <nav class="site-nav" aria-label="主导航"><a href="../archive.html">文库</a><a href="../index.html#posts" aria-current="page">实验笔记</a><a href="../about.html">关于</a></nav>
+      <div class="header-actions"><a class="icon-link" href="../archive.html" aria-label="返回文库"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2Z"/><path d="M8 8h6M8 12h6"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button></div>
+    </div>
+  </header>
+
+  <main id="content" class="article-shell">
+    <nav class="breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span>/</span><a href="../archive.html">文库</a></nav>
+    <header class="article-header">
+      <p class="eyebrow">Embedded · 2026-04-27</p>
+      <h1>从 RTOS 任务调度理解嵌入式系统</h1>
+      <p class="lede">实时系统的难点不只是写驱动，而是让任务、中断和共享资源在可预期的时间里协同。</p>
+      <div class="article-actions"><button class="button primary" type="button" data-copy-link><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>复制链接</button></div>
+      <img class="article-cover" src="../assets/cover-workflow.svg" width="960" height="540" alt="">
+    </header>
+
+    <article class="prose">
+      <h2>先拆任务边界</h2>
+      <p>一个稳定系统通常会把采集、控制、通信、日志和推理拆成不同任务。任务边界越清楚，调试时越容易定位是调度问题、资源竞争，还是外设时序问题。</p>
+      <h2>优先级表达实时性</h2>
+      <p>优先级不是谁重要谁最高，而是谁对时间最敏感谁更高。传感器采样、控制环和通信收包往往比日志输出更需要确定性。</p>
+      <h2>把偶现问题变成可观测问题</h2>
+      <p>给关键路径加时间戳、队列水位、堆栈余量和错误计数。嵌入式调试最怕“感觉卡了一下”，最好让系统自己留下证据。</p>
+    </article>
+
+    <nav class="post-nav" aria-label="文章导航"><a href="edge-ai-inference.html">上一篇</a><a href="ai-coding-workflow.html">下一篇</a></nav>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year">2026</span> AChao Edge AI Lab</p><p>Embedded systems, deep learning, and notes from the bench.</p></footer>
+  <script src="../assets/script.js"></script>
+</body>
+</html>

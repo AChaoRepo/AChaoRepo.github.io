@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AChaoBlog | Out of Stack</title>
-  <meta name="description" content="AChao 的个人博客，记录学习笔记、技术分享、AI 协作和系统思考。">
+  <title>AChao Edge AI Lab</title>
+  <meta name="description" content="AChao 的个人技术博客，记录嵌入式系统、边缘 AI、深度学习部署和工程实践。">
   <link rel="icon" href="assets/avatar.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -12,21 +12,19 @@
   <a class="skip-link" href="#content">跳到内容</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="AChaoBlog 首页">
-        <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+      <a class="brand" href="index.html" aria-label="AChao Edge AI Lab 首页">
+        <span class="brand-chip" aria-hidden="true"></span>
+        <span>
+          <strong>AChao Lab</strong>
+          <small>Embedded · Deep Learning</small>
         </span>
-        <strong>AChaoBlog</strong>
       </a>
       <nav class="site-nav" aria-label="主导航">
         <a href="archive.html">文库</a>
-        <a href="#posts">专栏</a>
-        <a href="about.html">我的</a>
+        <a href="#posts">实验笔记</a>
+        <a href="about.html">关于</a>
       </nav>
       <div class="header-actions">
-        <a class="icon-link" href="about.html" aria-label="留言">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/><path d="M8 8h8M8 12h5"/></svg>
-        </a>
         <button class="icon-button" type="button" data-random-post aria-label="随机文章" title="随机文章">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
         </button>
@@ -42,18 +40,51 @@
   </header>
 
   <main id="content">
-    <section class="welcome-hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">你好，欢迎来到<span>AChaoBlog</span></h1>
-      <p>越努力，越幸运</p>
+    <section class="lab-hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Edge AI / Embedded Notes</p>
+        <h1 id="hero-title"><span>把模型放进设备里，</span><span>把想法跑在真实世界。</span></h1>
+        <p class="lede">这里记录 MCU、RTOS、传感器、TinyML、模型量化、边缘部署和工程验证。文章尽量从“能跑起来”走到“跑得稳定、跑得漂亮”。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#posts">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            查看实验笔记
+          </a>
+          <a class="button ghost" href="archive.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2Z"/><path d="M8 8h6M8 12h6"/></svg>
+            打开文库
+          </a>
+        </div>
+      </div>
+      <aside class="hero-lab-card" aria-label="实验室状态">
+        <img src="assets/edge-ai-board.svg" width="520" height="360" alt="边缘 AI 开发板与神经网络示意图">
+        <div class="lab-readout">
+          <span>INT8 latency</span>
+          <strong>12.8 ms</strong>
+        </div>
+        <div class="lab-readout">
+          <span>MCU target</span>
+          <strong>STM32 / ESP32</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="signal-strip" aria-label="技术方向">
+      <article><span>01</span><strong>Embedded</strong><p>RTOS、驱动、通信协议、低功耗</p></article>
+      <article><span>02</span><strong>Deep Learning</strong><p>CNN、Transformer、训练与评估</p></article>
+      <article><span>03</span><strong>Edge AI</strong><p>量化、剪枝、ONNX、端侧推理</p></article>
+      <article><span>04</span><strong>Build Log</strong><p>硬件调试、数据采集、工程复盘</p></article>
     </section>
 
     <div class="blog-layout">
       <div class="feed-column">
         <section class="category-bar" aria-label="文章分类">
           <div class="filter-row">
-            <button class="filter-button is-active" type="button" data-filter="all">首页</button>
+            <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+            <button class="filter-button" type="button" data-filter="embedded">嵌入式</button>
+            <button class="filter-button" type="button" data-filter="deeplearning">深度学习</button>
+            <button class="filter-button" type="button" data-filter="edgeai">边缘 AI</button>
             <button class="filter-button" type="button" data-filter="notes">学习笔记</button>
-            <button class="filter-button" type="button" data-filter="engineering">技术分享</button>
           </div>
           <a class="more-link" href="archive.html" aria-label="查看更多文章">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 5 5-5 5M13 7l5 5-5 5"/></svg>
@@ -64,63 +95,47 @@
         <section class="article-feed" id="posts" aria-label="文章列表">
           <label class="search-field" for="postSearch">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <input id="postSearch" type="search" placeholder="搜索文章或标签">
+            <input id="postSearch" type="search" placeholder="搜索 MCU、CNN、量化、RTOS">
           </label>
+
+          <article class="post-card accent-blue" data-title="边缘设备上的轻量化推理笔记" data-tags="edgeai deeplearning embedded int8 onnx">
+            <a class="post-link" href="posts/edge-ai-inference.html" aria-label="阅读 边缘设备上的轻量化推理笔记"></a>
+            <div class="post-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v4M16 3v4M8 17v4M16 17v4M3 8h4M17 8h4M3 16h4M17 16h4"/><rect x="7" y="7" width="10" height="10" rx="2"/></svg>边缘 AI</div>
+            <h2>边缘设备上的轻量化推理笔记</h2>
+            <p>从 ONNX 到 INT8，把模型压进资源受限设备时，需要同时看精度、延迟、内存和算子支持。</p>
+            <div class="post-footer"><div class="tag-list"><span># INT8</span><span># ONNX</span><span># Edge AI</span></div><time datetime="2026-04-27">2026/4/27</time></div>
+          </article>
+
+          <article class="post-card accent-pink" data-title="从 RTOS 任务调度理解嵌入式系统" data-tags="embedded rtos scheduler notes">
+            <a class="post-link" href="posts/rtos-scheduler.html" aria-label="阅读 从 RTOS 任务调度理解嵌入式系统"></a>
+            <div class="post-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/><path d="M8 4v16M16 4v16"/></svg>嵌入式</div>
+            <h2>从 RTOS 任务调度理解嵌入式系统</h2>
+            <p>用任务、优先级、队列和中断来拆开实时系统，让“偶现问题”变成可以观测和复现的工程问题。</p>
+            <div class="post-footer"><div class="tag-list"><span># RTOS</span><span># MCU</span><span># 调度</span></div><time datetime="2026-04-27">2026/4/27</time></div>
+          </article>
+
+          <article class="post-card" data-title="和 AI 结对写代码的工作流" data-tags="deeplearning ai engineering workflow notes">
+            <a class="post-link" href="posts/ai-coding-workflow.html" aria-label="阅读 和 AI 结对写代码的工作流"></a>
+            <div class="post-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="7"/></svg>工程效率</div>
+            <h2>和 AI 结对写代码的工作流</h2>
+            <p>把需求、上下文、验证和复盘串成闭环，让 AI 成为稳定的工程协作者。</p>
+            <div class="post-footer"><div class="tag-list"><span># AI</span><span># 工程</span><span># workflow</span></div><time datetime="2026-04-20">2026/4/20</time></div>
+          </article>
 
           <article class="post-card" data-title="从零发布 GitHub Pages 个人博客" data-tags="engineering github pages notes">
             <a class="post-link" href="posts/github-pages-start.html" aria-label="阅读 从零发布 GitHub Pages 个人博客"></a>
-            <div class="post-folder">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5Z"/></svg>
-              学习笔记
-            </div>
+            <div class="post-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18V6l8-3 8 3v12l-8 3Z"/><path d="M12 3v18M4 6l8 4 8-4"/></svg>Build Log</div>
             <h2>从零发布 GitHub Pages 个人博客</h2>
             <p>把仓库、根目录、静态文件和访问路径一次理清，避免上线时踩在配置问题上。</p>
-            <div class="post-footer">
-              <div class="tag-list"><span># 工程</span><span># GitHub Pages</span><span># 部署</span></div>
-              <time datetime="2026-04-26">2026/4/26</time>
-            </div>
-          </article>
-
-          <article class="post-card" data-title="和 AI 结对写代码的工作流" data-tags="ai engineering workflow notes">
-            <a class="post-link" href="posts/ai-coding-workflow.html" aria-label="阅读 和 AI 结对写代码的工作流"></a>
-            <div class="post-folder">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5Z"/></svg>
-              技术分享
-            </div>
-            <h2>和 AI 结对写代码的工作流</h2>
-            <p>把需求、上下文、验证和复盘串成闭环，让 AI 成为稳定的工程协作者。</p>
-            <div class="post-footer">
-              <div class="tag-list"><span># AI</span><span># 工程</span><span># workflow</span></div>
-              <time datetime="2026-04-20">2026/4/20</time>
-            </div>
+            <div class="post-footer"><div class="tag-list"><span># GitHub Pages</span><span># 静态站点</span></div><time datetime="2026-04-26">2026/4/26</time></div>
           </article>
 
           <article class="post-card" data-title="Out of Stack 的写作清单" data-tags="notes writing system">
             <a class="post-link" href="posts/out-of-stack-notes.html" aria-label="阅读 Out of Stack 的写作清单"></a>
-            <div class="post-folder">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5Z"/></svg>
-              学习笔记
-            </div>
+            <div class="post-folder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="m3 6 1 1 2-2M3 12l1 1 2-2M3 18l1 1 2-2"/></svg>学习笔记</div>
             <h2>Out of Stack 的写作清单</h2>
             <p>用一个轻量清单约束文章质量：问题明确、证据充分、结论可迁移。</p>
-            <div class="post-footer">
-              <div class="tag-list"><span># 笔记</span><span># 写作</span><span># system</span></div>
-              <time datetime="2026-04-12">2026/4/12</time>
-            </div>
-          </article>
-
-          <article class="post-card" data-title="个人博客 UI 复刻与静态化" data-tags="engineering ui github pages">
-            <a class="post-link" href="about.html" aria-label="阅读 个人博客 UI 复刻与静态化"></a>
-            <div class="post-folder">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5Z"/></svg>
-              技术分享
-            </div>
-            <h2>个人博客 UI 复刻与静态化</h2>
-            <p>用纯 HTML、CSS 和少量 JavaScript 复刻参考站体验，上传 GitHub 后即可访问。</p>
-            <div class="post-footer">
-              <div class="tag-list"><span># 前端</span><span># UI</span><span># GitHub</span></div>
-              <time datetime="2026-04-26">2026/4/26</time>
-            </div>
+            <div class="post-footer"><div class="tag-list"><span># 笔记</span><span># 写作</span><span># 复盘</span></div><time datetime="2026-04-12">2026/4/12</time></div>
           </article>
 
           <p class="empty-state" id="noResults" hidden>没有匹配的文章。</p>
@@ -128,11 +143,11 @@
       </div>
 
       <aside class="sidebar" aria-label="侧边栏">
-        <section class="profile-card">
-          <p class="profile-greeting">晚上好，是时候休息了！</p>
-          <img src="assets/profile-scene.svg" width="148" height="148" alt="AChao 的个人插画头像">
+        <section class="profile-card lab-profile">
+          <p class="profile-greeting">当前实验：Edge AI Pipeline</p>
+          <img src="assets/lab-avatar.svg" width="148" height="148" alt="AChao 的实验室头像">
           <h2>AChao</h2>
-          <p>越努力，越幸运</p>
+          <p>嵌入式开发 · 深度学习部署 · 工程复盘</p>
           <div class="profile-actions">
             <a href="https://github.com/AChaoRepo" target="_blank" rel="noreferrer" aria-label="GitHub">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.99c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.69-4.57 4.94.36.31.69.92.69 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
@@ -143,33 +158,28 @@
           </div>
         </section>
 
-        <section class="count-card">
-          <div class="count-left">
-            <span>距离</span>
-            <strong>春节</strong>
-            <b>-70</b>
-            <small>2026-02-17</small>
-          </div>
+        <section class="count-card skill-card">
+          <h2>Lab Stack</h2>
           <div class="count-bars">
-            <p><span>今日</span><i style="--value: 87.5%">87.50%</i></p>
-            <p><span>本周</span><i style="--value: 85.71%">85.71%</i></p>
-            <p><span>本月</span><i style="--value: 83.33%">83.33%</i></p>
-            <p><span>本年</span><i style="--value: 31.51%">31.51%</i></p>
+            <p><span>MCU</span><i style="--value: 86%">86%</i></p>
+            <p><span>RTOS</span><i style="--value: 78%">78%</i></p>
+            <p><span>PyTorch</span><i style="--value: 82%">82%</i></p>
+            <p><span>部署</span><i style="--value: 72%">72%</i></p>
           </div>
         </section>
 
         <section class="tags-card">
-          <h2># 热门标签</h2>
+          <h2># 研究标签</h2>
           <div class="hot-tags">
-            <a href="#posts">前端<sup>13</sup></a>
-            <a href="#posts">vue<sup>4</sup></a>
-            <a href="#posts">nuxt<sup>1</sup></a>
-            <a href="#posts">html<sup>2</sup></a>
-            <a href="#posts">javascript<sup>2</sup></a>
-            <a href="#posts">typescript<sup>1</sup></a>
-            <a href="#posts">css<sup>3</sup></a>
-            <a href="#posts">GitHub<sup>2</sup></a>
-            <a href="#posts">AI<sup>4</sup></a>
+            <a href="#posts">STM32<sup>6</sup></a>
+            <a href="#posts">ESP32<sup>4</sup></a>
+            <a href="#posts">RTOS<sup>5</sup></a>
+            <a href="#posts">CNN<sup>7</sup></a>
+            <a href="#posts">TinyML<sup>3</sup></a>
+            <a href="#posts">ONNX<sup>4</sup></a>
+            <a href="#posts">量化<sup>5</sup></a>
+            <a href="#posts">传感器<sup>4</sup></a>
+            <a href="#posts">Edge AI<sup>8</sup></a>
           </div>
         </section>
       </aside>
@@ -181,8 +191,8 @@
   </a>
 
   <footer class="site-footer">
-    <p>© <span id="year">2026</span> AChaoBlog</p>
-    <p>Built for GitHub Pages</p>
+    <p>© <span id="year">2026</span> AChao Edge AI Lab</p>
+    <p>Embedded systems, deep learning, and notes from the bench.</p>
   </footer>
 
   <script src="assets/script.js"></script>
