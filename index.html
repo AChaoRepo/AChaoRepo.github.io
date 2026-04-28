@@ -47,7 +47,60 @@
         </div>
       </div>
       <div class="hero-art">
-        <img class="hero-visual" src="assets/home-hero-board.png" width="629" height="421" alt="A'Chao 嵌入式电路板、摄像头与代码屏幕插画">
+        <div class="hero-board" role="group" aria-label="可交互的嵌入式硬件展示板">
+          <span class="board-orbit one" aria-hidden="true"></span>
+          <span class="board-orbit two" aria-hidden="true"></span>
+          <span class="float-mark star-left" aria-hidden="true">★</span>
+          <span class="float-mark star-mid" aria-hidden="true">✦</span>
+          <span class="float-mark star-right" aria-hidden="true">✦</span>
+          <span class="float-mark binary" aria-hidden="true">1010<br>0110</span>
+          <span class="float-mark code-bubble" aria-hidden="true">{ }</span>
+
+          <div class="pcb-plane" aria-hidden="true">
+            <svg class="trace-map" viewBox="0 0 720 360" preserveAspectRatio="none">
+              <path d="M88 242H280M128 205h120l48-52h164M426 226h118l58-68M322 292h86l54-76M174 282h92l36-46M470 286h98l64-84" />
+              <path d="M314 100v76M352 82v92M394 98v82M248 136h86M434 128h70M522 112h92" />
+              <circle cx="88" cy="242" r="7" /><circle cx="128" cy="205" r="7" /><circle cx="602" cy="158" r="7" /><circle cx="632" cy="202" r="7" /><circle cx="248" cy="136" r="7" /><circle cx="568" cy="286" r="7" />
+            </svg>
+            <span class="solder-dot d1"></span><span class="solder-dot d2"></span><span class="solder-dot d3"></span><span class="solder-dot d4"></span><span class="solder-dot d5"></span><span class="solder-dot d6"></span>
+          </div>
+
+          <button class="hero-part camera-module" type="button" data-hero-part data-hero-title="视觉采集模块" data-hero-text="摄像头负责采集图像输入，适合 OpenMV、目标识别和边缘视觉实验。" aria-label="查看视觉采集模块">
+            <span class="camera-shell"><span class="lens"><i></i></span></span>
+            <span class="pin-cable"><i></i><i></i><i></i><i></i></span>
+          </button>
+
+          <button class="hero-part code-display" type="button" data-hero-part data-hero-title="代码与调试屏" data-hero-text="把固件逻辑、串口日志和实验现象写成可复盘的技术文章。" aria-label="查看代码与调试屏">
+            <span class="window-dots"><i></i><i></i><i></i></span>
+            <span class="code-lines"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="code-mark">&lt;/&gt;</span>
+          </button>
+
+          <button class="hero-part mcu-chip is-active" type="button" data-hero-part data-hero-title="A'Chao 主控核心" data-hero-text="以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期博客。" aria-label="查看 A'Chao 主控核心">
+            <span>A'Chao <b>♥</b></span>
+          </button>
+
+          <button class="hero-part ultrasonic-module" type="button" data-hero-part data-hero-title="传感器接口" data-hero-text="记录摄像头、超声波、温湿度、光照等传感器的接线、驱动和调试过程。" aria-label="查看传感器接口">
+            <span class="sonar"><i></i></span><span class="sonar"><i></i></span>
+          </button>
+
+          <button class="hero-part led-module" type="button" data-hero-part data-hero-title="状态指示灯" data-hero-text="从点亮 LED 到定位系统状态，把每一步调试都变成可复用经验。" aria-label="查看状态指示灯">
+            <span></span><i></i><i></i>
+          </button>
+
+          <button class="hero-part mini-chip chip-a" type="button" data-hero-part data-hero-title="外设芯片" data-hero-text="外设芯片、通信总线和驱动代码，是嵌入式项目里最值得沉淀的细节。" aria-label="查看外设芯片"></button>
+          <button class="hero-part mini-chip chip-b" type="button" data-hero-part data-hero-title="电源与接口" data-hero-text="电源、接口、焊接和板级问题会被整理成排查清单。" aria-label="查看电源与接口"></button>
+
+          <button class="hero-debug-card hero-part" type="button" data-hero-part data-hero-title="调试次数" data-hero-text="每一次失败、重烧、串口输出和波形确认，都是博客里的一条成长记录。" aria-label="查看调试次数">
+            <span class="bug-icon">✿</span>
+            <span><small>调试次数</small><strong>2333+ 次</strong></span>
+          </button>
+
+          <p class="hero-insight" aria-live="polite">
+            <strong id="heroInsightTitle">A'Chao 主控核心</strong>
+            <span id="heroInsightText">以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期博客。</span>
+          </p>
+        </div>
       </div>
     </section>
 
