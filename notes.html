@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>笔记 | A'Chao Tech Blog</title>
+  <meta name="description" content="A'Chao 的学习笔记、阅读笔记与调试记录。">
+  <link rel="icon" href="assets/ac-favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/ac-favicon.png">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="notes">
+  <a class="skip-link" href="#content">跳到内容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="assets/lab-avatar.svg" width="56" height="56" alt=""><span><strong>A'Chao Tech Blog</strong><small>♥</small></span></a>
+      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="archive.html">文章</a><a href="projects.html">项目</a><a href="notes.html" aria-current="page">笔记</a><a href="resources.html">资源</a><a href="about.html">关于我</a></nav>
+      <div class="header-actions"><a class="icon-link" href="archive.html" aria-label="搜索"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button><img class="user-avatar" src="assets/lab-avatar.svg" width="46" height="46" alt=""></div>
+    </div>
+  </header>
+
+  <main id="content" class="site-main">
+    <section class="page-hero has-art">
+      <div><h1><span class="accent">笔记</span> / 学习沉淀与知识卡片</h1><p>把知识记录下来，让成长看得见。</p></div>
+      <div class="note-art hero-board" aria-hidden="true"><span class="chip-core">Note</span><span class="spark a"></span><span class="sensor one"></span></div>
+    </section>
+
+    <section class="toolbar" aria-label="笔记工具">
+      <div class="filter-row"><button class="filter-button is-active" type="button">全部</button><button class="filter-button" type="button">学习笔记</button><button class="filter-button" type="button">阅读笔记</button><button class="filter-button" type="button">调试记录</button><button class="filter-button" type="button">项目复盘</button><button class="filter-button" type="button">代码片段</button></div>
+      <label class="search-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="搜索笔记..."></label>
+    </section>
+
+    <div class="notes-layout">
+      <div>
+        <section class="section-card glass-card">
+          <div class="section-head"><h2 class="section-title">最近笔记</h2><a class="section-link" href="archive.html">查看全部笔记</a></div>
+          <div class="notes-row">
+            <article class="note-card"><div class="thumb"><span class="badge">学习笔记</span></div><h2>STM32 外设学习笔记：定时器详解</h2><p>系统梳理通用定时器的工作原理、寄存器配置与应用示例。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag green">定时器</span></div><div class="meta-row"><time>2024-05-18</time><span>128</span></div></article>
+            <article class="note-card"><div class="thumb dark"><span class="badge pink">调试记录</span></div><h2>I2C 通信调试记录：从 NACK 到稳定</h2><p>记录一次 I2C 通信失败的排查过程，分析 NACK 原因并最终定位问题。</p><div class="tag-list"><span class="tag">I2C</span><span class="tag pink">调试</span></div><div class="meta-row"><time>2024-05-16</time><span>96</span></div></article>
+            <article class="note-card"><div class="thumb monitor"><span class="badge">学习笔记</span></div><h2>FreeRTOS 任务调度机制总结</h2><p>任务状态、调度器、时间片与优先级倒置问题整理。</p><div class="tag-list"><span class="tag">FreeRTOS</span><span class="tag orange">调度</span></div><div class="meta-row"><time>2024-05-14</time><span>87</span></div></article>
+            <article class="note-card"><div class="thumb dark"><span class="badge">代码片段</span></div><h2>OLED 驱动 SSD1306 最高实现</h2><p>基于 I2C 的 SSD1306 显示驱动，包含初始化与显示刷新。</p><div class="tag-list"><span class="tag">OLED</span><span class="tag pink">C</span></div><div class="meta-row"><time>2024-05-14</time><span>102</span></div></article>
+          </div>
+        </section>
+
+        <section class="section-card glass-card" style="margin-top:16px">
+          <div class="section-head"><h2 class="section-title">阅读清单</h2><a class="section-link" href="#">查看全部阅读</a></div>
+          <div class="reading-row">
+            <article class="book-card"><div class="book-cover"></div><div><h2>《代码整洁之道》</h2><p>提升代码质量与可读性。</p><span class="tag">编程思想</span></div></article>
+            <article class="book-card"><div class="book-cover"></div><div><h2>《嵌入式系统设计与实践》</h2><p>从底层到应用的嵌入式实践。</p><span class="tag">系统设计</span></div></article>
+            <article class="book-card"><div class="book-cover"></div><div><h2>《深入理解计算机系统》</h2><p>程序员必备的经典教材。</p><span class="tag">计算机原理</span></div></article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-stack">
+        <section class="panel"><h2>知识专题</h2><ul class="progress-list"><li><span>STM32 学习笔记 <b>72%</b></span><div class="bar"><i style="width:72%"></i></div></li><li><span>嵌入式 C 语言 <b>65%</b></span><div class="bar"><i style="width:65%"></i></div></li><li><span>FreeRTOS 实践 <b>58%</b></span><div class="bar"><i style="width:58%"></i></div></li><li><span>驱动开发记录 <b>61%</b></span><div class="bar"><i style="width:61%"></i></div></li></ul></section>
+        <section class="panel"><h2>今日学习打卡</h2><p><span class="badge">连续学习</span> <strong style="color:var(--pink);font-size:2rem">23</strong> 天</p><ul class="check-list"><li>学习 STM32 定时器高级应用</li><li>阅读《操作系统导论》同步与互斥</li><li>整理 I2C 调试流程与常见问题</li><li>完成一个小项目功能验证</li></ul></section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

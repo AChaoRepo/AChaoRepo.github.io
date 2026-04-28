@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>文库 | AChao Edge AI Lab</title>
-  <meta name="description" content="AChao Edge AI Lab 文章归档。">
+  <title>文章 | A'Chao Tech Blog</title>
+  <meta name="description" content="A'Chao Tech Blog 的技术文章与学习记录。">
   <link rel="icon" href="assets/ac-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/ac-favicon.png">
   <link rel="stylesheet" href="assets/styles.css">
@@ -13,35 +13,65 @@
   <a class="skip-link" href="#content">跳到内容</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="AChao Edge AI Lab 首页"><span class="brand-chip" aria-hidden="true"></span><span><strong>AChao Lab</strong><small>Embedded · Deep Learning</small></span></a>
-      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="lab.html">实验台</a><a href="archive.html" aria-current="page">文库</a><a href="about.html">关于</a></nav>
-      <div class="header-actions"><a class="icon-link" href="lab.html#posts" aria-label="搜索文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button></div>
+      <a class="brand" href="index.html"><img src="assets/lab-avatar.svg" width="56" height="56" alt=""><span><strong>A'Chao Tech Blog</strong><small>♥</small></span></a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="index.html">首页</a><a href="archive.html" aria-current="page">文章</a><a href="projects.html">项目</a><a href="notes.html">笔记</a><a href="resources.html">资源</a><a href="about.html">关于我</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-link" href="#posts" aria-label="搜索文章"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button>
+        <img class="user-avatar" src="assets/lab-avatar.svg" width="46" height="46" alt="">
+      </div>
     </div>
   </header>
 
-  <main id="content" class="page-shell">
-    <section class="page-hero">
-      <p class="eyebrow">Archive</p>
-      <h1>实验文库</h1>
-      <p>按主题沉淀嵌入式、深度学习、边缘 AI 和工程复盘。可以用搜索和标签快速缩小范围。</p>
-      <div class="archive-tools">
-        <label class="search-field" for="postSearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="postSearch" type="search" placeholder="搜索 MCU、RTOS、ONNX、量化"></label>
-        <div class="filter-row" aria-label="文章标签"><button class="filter-button is-active" type="button" data-filter="all">全部</button><button class="filter-button" type="button" data-filter="embedded">嵌入式</button><button class="filter-button" type="button" data-filter="deeplearning">深度学习</button><button class="filter-button" type="button" data-filter="edgeai">边缘 AI</button><button class="filter-button" type="button" data-filter="notes">学习笔记</button></div>
+  <main id="content" class="site-main">
+    <section class="page-hero has-art">
+      <div>
+        <h1><span class="accent">文章</span> / 技术文章与学习记录</h1>
+        <p>分享嵌入式系统、图像处理、硬件设计、调试技巧与 AI 部署经验，记录每一次学习与实践的成长。</p>
+      </div>
+      <div class="page-art hero-board" aria-hidden="true"><span class="sensor one"></span><span class="chip-core">{ }</span></div>
+    </section>
+
+    <section class="toolbar" aria-label="文章工具">
+      <label class="search-field" for="postSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="postSearch" type="search" placeholder="搜索文章标题、关键词..."></label>
+      <div class="filter-row">
+        <button class="filter-button is-active" type="button" data-filter="all">全部</button>
+        <button class="filter-button" type="button" data-filter="embedded">嵌入式</button>
+        <button class="filter-button" type="button" data-filter="openmv">OpenMV</button>
+        <button class="filter-button" type="button" data-filter="stm32">STM32</button>
+        <button class="filter-button" type="button" data-filter="fpga">FPGA</button>
+        <button class="filter-button" type="button" data-filter="ai">AI</button>
       </div>
     </section>
 
-    <section class="archive-list" id="posts" aria-label="文章列表">
-      <div class="archive-year">2026</div>
-      <article class="archive-item" data-title="边缘设备上的轻量化推理笔记" data-tags="edgeai deeplearning embedded int8 onnx"><time datetime="2026-04-27">04/27</time><div><h2><a href="posts/edge-ai-inference.html">边缘设备上的轻量化推理笔记</a></h2><p>从 ONNX 到 INT8，看精度、延迟、内存和算子支持。</p></div></article>
-      <article class="archive-item" data-title="从 RTOS 任务调度理解嵌入式系统" data-tags="embedded rtos scheduler notes"><time datetime="2026-04-27">04/27</time><div><h2><a href="posts/rtos-scheduler.html">从 RTOS 任务调度理解嵌入式系统</a></h2><p>用任务、优先级、队列和中断拆开实时系统。</p></div></article>
-      <article class="archive-item" data-title="从零发布 GitHub Pages 个人博客" data-tags="engineering github pages notes"><time datetime="2026-04-26">04/26</time><div><h2><a href="posts/github-pages-start.html">从零发布 GitHub Pages 个人博客</a></h2><p>仓库命名、入口文件、发布路径和上线检查。</p></div></article>
-      <article class="archive-item" data-title="和 AI 结对写代码的工作流" data-tags="deeplearning ai engineering workflow notes"><time datetime="2026-04-20">04/20</time><div><h2><a href="posts/ai-coding-workflow.html">和 AI 结对写代码的工作流</a></h2><p>需求、上下文、验证和复盘如何组成协作闭环。</p></div></article>
-      <article class="archive-item" data-title="Out of Stack 的写作清单" data-tags="notes writing system"><time datetime="2026-04-12">04/12</time><div><h2><a href="posts/out-of-stack-notes.html">Out of Stack 的写作清单</a></h2><p>一个轻量的写作质量检查表。</p></div></article>
-      <p class="empty-state" id="noResults" hidden>没有匹配的文章。</p>
-    </section>
+    <div class="content-layout">
+      <section class="article-grid" id="posts" aria-label="文章列表">
+        <article class="article-card featured" data-title="STM32 外设学习笔记 定时器详解与实战应用" data-tags="embedded stm32 notes">
+          <a class="post-link" href="posts/rtos-scheduler.html" aria-label="阅读 STM32 外设学习笔记"></a>
+          <div class="thumb"></div>
+          <div class="card-body"><span class="badge pink">置顶</span><h2>STM32 外设学习笔记：定时器详解与实战应用</h2><p>从定时器的基本原理出发，深入讲解 TIM 的工作模式、寄存器配置与中断机制，并通过实战例程理解项目中的应用。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">外设</span><span class="tag">定时器</span><span class="tag green">实战</span></div><div class="meta-row"><span>A'Chao</span><time>2024-05-18</time><span>1.2k</span><span>18</span></div></div>
+        </article>
+        <article class="article-card" data-title="OpenMV 图像处理入门 颜色识别" data-tags="openmv ai embedded"><a class="post-link" href="posts/edge-ai-inference.html"></a><div class="thumb camera"><span class="badge pink">OpenMV</span></div><div class="card-body"><h2>OpenMV 图像处理入门：颜色识别</h2><p>通过示例演示如何使用 OpenMV 进行颜色阈值提取与目标识别。</p><div class="meta-row"><time>2024-05-15</time><span>892</span><span>12</span></div></div></article>
+        <article class="article-card" data-title="Verilog 学习笔记 状态机设计" data-tags="fpga notes"><a class="post-link" href="posts/ai-coding-workflow.html"></a><div class="thumb dark"><span class="badge">Verilog</span></div><div class="card-body"><h2>Verilog 学习笔记：状态机设计</h2><p>从状态机到代码实现，讲解状态机的设计思路与常见写法。</p><div class="meta-row"><time>2024-05-12</time><span>756</span><span>9</span></div></div></article>
+        <article class="article-card" data-title="多传感器环境监测站设计" data-tags="embedded stm32"><a class="post-link" href="posts/github-pages-start.html"></a><div class="thumb camera"><span class="badge pink">传感器</span></div><div class="card-body"><h2>多传感器环境监测站设计</h2><p>温湿度、光照、空气质量传感器的数据采集与显示系统。</p><div class="meta-row"><time>2024-05-10</time><span>631</span><span>7</span></div></div></article>
+        <article class="article-card" data-title="串口无法打印的排查方法" data-tags="embedded notes"><a class="post-link" href="posts/out-of-stack-notes.html"></a><div class="thumb monitor"><span class="badge">调试</span></div><div class="card-body"><h2>调试笔记：串口无法打印的排查方法</h2><p>系统梳理串口调试中常见问题的排查思路与解决方法。</p><div class="meta-row"><time>2024-05-08</time><span>548</span><span>6</span></div></div></article>
+        <article class="article-card" data-title="FPGA 入门 点亮第一个 LED" data-tags="fpga"><div class="thumb"><span class="badge">FPGA</span></div><div class="card-body"><h2>FPGA 入门：点亮第一个 LED</h2><p>基于 Verilog 的工程创建与开发板 LED 控制实验。</p><div class="meta-row"><time>2024-05-05</time><span>1.1k</span><span>14</span></div></div></article>
+        <article class="article-card" data-title="基于 FreeRTOS 的多任务实践" data-tags="embedded stm32"><div class="thumb monitor"><span class="badge">嵌入式</span></div><div class="card-body"><h2>基于 FreeRTOS 的多任务实践</h2><p>任务、通信、同步与优先级调度的完整示例。</p><div class="meta-row"><time>2024-04-30</time><span>928</span><span>11</span></div></div></article>
+        <article class="article-card" data-title="基于注意力机制的图像识别 阅读笔记" data-tags="ai notes"><div class="thumb paper"><span class="badge green">论文笔记</span></div><div class="card-body"><h2>阅读笔记：基于注意力机制的图像识别</h2><p>整理论文核心思想、模型结构与实验结果。</p><div class="meta-row"><time>2024-04-28</time><span>612</span><span>6</span></div></div></article>
+        <p class="empty-state" id="noResults" hidden>没有匹配的文章。</p>
+      </section>
+
+      <aside class="side-stack" aria-label="侧栏">
+        <section class="panel"><h2>热门标签</h2><div class="tag-cloud"><span class="tag">STM32 28</span><span class="tag pink">OpenMV 24</span><span class="tag">嵌入式 22</span><span class="tag">Verilog 18</span><span class="tag">FPGA 15</span><span class="tag green">调试 14</span><span class="tag">图像处理 13</span><span class="tag pink">AI 11</span></div></section>
+        <section class="panel"><h2>最近更新</h2><div class="article-list"><a href="posts/rtos-scheduler.html"><div class="thumb"></div><div><h3>STM32 外设学习笔记</h3><p><span class="tag">STM32</span></p></div><time>05-18</time></a><a href="posts/edge-ai-inference.html"><div class="thumb camera"></div><div><h3>OpenMV 图像处理入门</h3><p><span class="tag pink">OpenMV</span></p></div><time>05-15</time></a><a href="posts/ai-coding-workflow.html"><div class="thumb dark"></div><div><h3>Verilog 状态机设计</h3><p><span class="tag">Verilog</span></p></div><time>05-12</time></a></div></section>
+        <section class="panel"><h2>归档</h2><ul class="archive-list"><li>2024年5月 <span class="tag">18</span></li><li>2024年4月 <span class="tag">32</span></li><li>2024年3月 <span class="tag">26</span></li><li>2024年2月 <span class="tag">19</span></li></ul></section>
+      </aside>
+    </div>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year">2026</span> AChao Edge AI Lab</p><p>Embedded systems, deep learning, and notes from the bench.</p></footer>
+  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
   <script src="assets/script.js"></script>
 </body>
 </html>
