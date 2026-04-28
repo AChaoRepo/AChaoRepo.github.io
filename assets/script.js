@@ -33,26 +33,30 @@
     year.textContent = new Date().getFullYear().toString();
   }
 
-  const searchInput = document.getElementById("postSearch");
+  const searchInput = document.querySelector("[data-search]");
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const filterableItems = Array.from(document.querySelectorAll("[data-title][data-tags]"));
   const emptyState = document.getElementById("noResults");
   let currentFilter = "all";
 
+  function normalize(value) {
+    return (value || "").trim().toLowerCase();
+  }
+
   function applyFilters() {
-    const query = (searchInput?.value || "").trim().toLowerCase();
+    const query = normalize(searchInput?.value);
     let visibleCount = 0;
 
     filterableItems.forEach((item) => {
       const title = item.dataset.title || "";
       const tags = item.dataset.tags || "";
-      const haystack = `${title} ${tags}`.toLowerCase();
+      const haystack = normalize(`${title} ${tags}`);
       const tagList = tags.split(/\s+/);
       const matchesFilter = currentFilter === "all" || tagList.includes(currentFilter);
       const matchesQuery = !query || haystack.includes(query);
-      const isVisible = matchesFilter && matchesQuery;
-      item.hidden = !isVisible;
-      if (isVisible) {
+      const visible = matchesFilter && matchesQuery;
+      item.hidden = !visible;
+      if (visible) {
         visibleCount += 1;
       }
     });
@@ -74,10 +78,80 @@
   applyFilters();
 
   document.querySelector("[data-random-post]")?.addEventListener("click", () => {
-    const posts = Array.from(document.querySelectorAll(".post-card .post-link"));
+    const posts = Array.from(document.querySelectorAll(".post-link[href]"));
     const target = posts[Math.floor(Math.random() * posts.length)];
     if (target) {
       window.location.href = target.getAttribute("href");
+    }
+  });
+
+  const favoriteKey = "achao-favorites";
+  const favorites = new Set(JSON.parse(localStorage.getItem(favoriteKey) || "[]"));
+
+  function saveFavorites() {
+    localStorage.setItem(favoriteKey, JSON.stringify(Array.from(favorites)));
+  }
+
+  document.querySelectorAll("[data-favorite]").forEach((button) => {
+    const id = button.dataset.favorite || "";
+    button.classList.toggle("is-active", favorites.has(id));
+    button.setAttribute("aria-pressed", favorites.has(id).toString());
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (favorites.has(id)) {
+        favorites.delete(id);
+      } else {
+        favorites.add(id);
+      }
+      button.classList.toggle("is-active", favorites.has(id));
+      button.setAttribute("aria-pressed", favorites.has(id).toString());
+      saveFavorites();
+    });
+  });
+
+  const modalBackdrop = document.getElementById("detailModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalText = document.getElementById("modalText");
+  const modalTags = document.getElementById("modalTags");
+  const modalLink = document.getElementById("modalLink");
+
+  function closeModal() {
+    if (modalBackdrop) {
+      modalBackdrop.hidden = true;
+    }
+  }
+
+  document.querySelectorAll("[data-modal-open]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const card = button.closest("[data-title]");
+      if (!modalBackdrop || !card) {
+        return;
+      }
+      modalTitle.textContent = card.dataset.title || "项目详情";
+      modalText.textContent = card.dataset.summary || "这个项目的详细说明会继续完善。";
+      modalTags.innerHTML = "";
+      (card.dataset.tags || "").split(/\s+/).filter(Boolean).forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = "tag";
+        span.textContent = tag;
+        modalTags.appendChild(span);
+      });
+      const href = card.dataset.href || button.getAttribute("href") || "#";
+      modalLink.setAttribute("href", href);
+      modalBackdrop.hidden = false;
+    });
+  });
+
+  modalBackdrop?.addEventListener("click", (event) => {
+    if (event.target === modalBackdrop || event.target.matches("[data-modal-close]")) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
     }
   });
 
@@ -97,14 +171,12 @@
     button.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(window.location.href);
-        const textNode = Array.from(button.childNodes).find((node) => node.nodeType === Node.TEXT_NODE);
-        const previousText = textNode?.textContent || "";
-        if (textNode) {
-          textNode.textContent = " 已复制";
-          window.setTimeout(() => {
-            textNode.textContent = previousText;
-          }, 1400);
-        }
+        const previousText = button.dataset.defaultText || button.textContent;
+        button.dataset.defaultText = previousText;
+        button.textContent = "已复制";
+        window.setTimeout(() => {
+          button.textContent = previousText;
+        }, 1400);
       } catch {
         button.setAttribute("title", "复制失败，请手动复制地址栏链接");
       }

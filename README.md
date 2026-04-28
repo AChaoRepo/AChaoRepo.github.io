@@ -1,6 +1,6 @@
 # A'Chao Tech Blog
 
-这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 按 `E:\Out of Stack\Blog` 中的效果图做像素级复刻，页面视觉层位于 `assets/mockups/*.png`，导航和主要按钮使用透明热点链接覆盖。
+这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 按 `E:\Out of Stack\Blog` 中的效果图重新实现为真实 HTML/CSS 组件，导航、搜索、筛选、项目弹窗、资源收藏、主题切换和文章阅读进度都由 `assets/script.js` 驱动。
 
 ## 发布
 
