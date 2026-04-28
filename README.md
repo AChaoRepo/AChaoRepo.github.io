@@ -1,6 +1,6 @@
 # A'Chao Tech Blog
 
-这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 参考 `E:\Out of Stack\Blog` 中的效果图，使用浅蓝粉色、玻璃卡片、机器人头像和嵌入式项目看板风格，围绕嵌入式系统、硬件调试、AI 部署和工程复盘组织内容。
+这是一个无需构建步骤的 GitHub Pages 静态博客。当前 UI 按 `E:\Out of Stack\Blog` 中的效果图做像素级复刻，页面视觉层位于 `assets/mockups/*.png`，导航和主要按钮使用透明热点链接覆盖。
 
 ## 发布
 

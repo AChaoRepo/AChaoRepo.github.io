@@ -9,48 +9,24 @@
   <link rel="apple-touch-icon" href="assets/ac-favicon.png">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="resources">
+<body>
   <a class="skip-link" href="#content">跳到内容</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html"><img src="assets/lab-avatar.svg" width="56" height="56" alt=""><span><strong>A'Chao Tech Blog</strong><small>♥</small></span></a>
-      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="archive.html">文章</a><a href="projects.html">项目</a><a href="notes.html">笔记</a><a href="resources.html" aria-current="page">资源</a><a href="about.html">关于我</a></nav>
-      <div class="header-actions"><a class="icon-link" href="archive.html" aria-label="搜索"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button><img class="user-avatar" src="assets/lab-avatar.svg" width="46" height="46" alt=""></div>
-    </div>
-  </header>
-
-  <main id="content" class="site-main">
-    <section class="page-hero has-art">
-      <div><h1><span class="accent">资源</span> / 工具与资料整理</h1><p>精选嵌入式开发相关的工具、资料与网站，助你高效学习与开发。</p></div>
-      <div class="resource-art" aria-hidden="true"><span class="chip-core">DATA</span><span class="spark b"></span></div>
-    </section>
-
-    <section class="filter-row" aria-label="资源分类"><button class="filter-button is-active" type="button">全部</button><button class="filter-button" type="button">开发工具</button><button class="filter-button" type="button">学习资料</button><button class="filter-button" type="button">常用网站</button><button class="filter-button" type="button">下载资源</button><button class="filter-button" type="button">模板代码</button></section>
-
-    <section class="resources-feature glass-card">
-      <div class="thumb"><span class="badge pink">本周推荐</span></div>
-      <div><h2>STM32 开发资料包（全系列）</h2><p>STM32F0/F1/F3/F4/H7 全系列参考手册、应用笔记、例程代码、CubeMX 工程模板等打包下载，持续更新。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">资料包</span><span class="tag green">参考手册</span><span class="tag pink">例程代码</span></div></div>
-      <a class="button primary" href="#">下载资源</a>
-    </section>
-
-    <section class="resource-grid" aria-label="资源列表">
-      <article class="resource-card"><div class="thumb"></div><div><h2>STM32 开发资料包</h2><p>参考手册、RM、AN、Datasheet、CubeMX 工程。</p><a class="button ghost" href="#">下载</a></div></article>
-      <article class="resource-card"><div class="thumb camera"></div><div><h2>OpenMV 学习资源</h2><p>官方文档、教程、示例项目、固件与工具集合。</p><a class="button ghost" href="#">查看</a></div></article>
-      <article class="resource-card"><div class="thumb dark"></div><div><h2>Verilog/FPGA 工具链</h2><p>教程、代码示例、仿真工具和开发工具汇总。</p><a class="button ghost" href="#">查看</a></div></article>
-      <article class="resource-card"><div class="thumb paper"></div><div><h2>数据手册合集</h2><p>MCU、传感器、模块等常用芯片数据手册整理。</p><a class="button ghost" href="#">下载</a></div></article>
-      <article class="resource-card"><div class="thumb monitor"></div><div><h2>常用软件下载</h2><p>STM32CubeMX、Keil、VS Code、串口工具等。</p><a class="button ghost" href="#">查看</a></div></article>
-      <article class="resource-card"><div class="thumb paper"></div><div><h2>论文阅读网站</h2><p>精选学术论文检索与阅读网站。</p><a class="button ghost" href="#">查看</a></div></article>
-      <article class="resource-card"><div class="thumb dark"></div><div><h2>GitHub 仓库推荐</h2><p>优质开源项目、嵌入式框架与实用工具集合。</p><a class="button ghost" href="#">查看</a></div></article>
-      <article class="resource-card"><div class="thumb monitor"></div><div><h2>调试工具清单</h2><p>仿真器、逻辑分析仪、串口工具等推荐。</p><a class="button ghost" href="#">查看</a></div></article>
-    </section>
-
-    <div class="content-layout" style="margin-top:16px">
-      <section class="panel"><h2>常用链接</h2><ul class="link-list"><li><a href="https://www.st.com/" target="_blank" rel="noreferrer">ST 官方网站 <span>st.com</span></a></li><li><a href="https://developer.arm.com/" target="_blank" rel="noreferrer">ARM 官方文档 <span>developer.arm.com</span></a></li><li><a href="https://www.keil.com/" target="_blank" rel="noreferrer">Keil MDK 下载 <span>keil.com</span></a></li><li><a href="https://www.st.com/en/development-tools/stm32cubemx.html" target="_blank" rel="noreferrer">CubeMX 在线工具 <span>st.com</span></a></li></ul></section>
-      <aside class="side-stack"><section class="panel"><h2>推荐工具</h2><ul class="tool-list"><li><a href="#">STM32CubeMX <span>下载</span></a></li><li><a href="#">VS Code <span>下载</span></a></li><li><a href="#">Putty <span>下载</span></a></li></ul></section><section class="panel"><h2>我的收藏夹</h2><ul class="archive-list"><li>STM32F103C8T6 最小系统原理图</li><li>FreeRTOS 官方文档</li><li>C 语言常见面试题整理</li><li>嵌入式开发学习路线图</li></ul></section></aside>
-    </div>
+  <main id="content" class="mock-page" aria-label="资源页面">
+    <img src="assets/mockups/resources.png" width="1448" height="996" alt="资源页面界面">
+    <a class="hotspot" href="index.html" style="--left:5.6630%;--top:0.8032%;--width:21.4088%;--height:6.4257%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="index.html" style="--left:35.3591%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:42.1271%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">文章</span></a>
+    <a class="hotspot round" href="projects.html" style="--left:48.3425%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">项目</span></a>
+    <a class="hotspot round" href="notes.html" style="--left:54.5580%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">笔记</span></a>
+    <a class="hotspot round" href="resources.html" style="--left:60.7735%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">资源</span></a>
+    <a class="hotspot round" href="about.html" style="--left:66.7127%;--top:1.8072%;--width:6.2155%;--height:4.8193%;"><span class="screen-reader-text">关于我</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:83.0110%;--top:1.8072%;--width:3.3149%;--height:4.8193%;"><span class="screen-reader-text">搜索</span></a>
+    <a class="hotspot round" href="about.html" style="--left:89.7790%;--top:0.8032%;--width:4.8343%;--height:6.4257%;"><span class="screen-reader-text">个人头像</span></a>
+    <a class="hotspot" href="resources.html" style="--left:13.6740%;--top:35.9438%;--width:72.8591%;--height:13.0522%;"><span class="screen-reader-text">STM32 开发资料包</span></a>
+    <a class="hotspot" href="resources.html" style="--left:7.4586%;--top:51.0040%;--width:20.7182%;--height:16.0643%;"><span class="screen-reader-text">STM32 开发资料包</span></a>
+    <a class="hotspot" href="resources.html" style="--left:29.0055%;--top:51.0040%;--width:20.7182%;--height:16.0643%;"><span class="screen-reader-text">OpenMV 学习资源</span></a>
+    <a class="hotspot" href="resources.html" style="--left:50.6215%;--top:51.0040%;--width:20.7182%;--height:16.0643%;"><span class="screen-reader-text">Verilog FPGA 工具链</span></a>
+    <a class="hotspot" href="resources.html" style="--left:72.1685%;--top:51.0040%;--width:20.7182%;--height:16.0643%;"><span class="screen-reader-text">数据手册合集</span></a>
   </main>
-
-  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
-  <script src="assets/script.js"></script>
 </body>
 </html>

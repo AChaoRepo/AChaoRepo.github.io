@@ -9,96 +9,28 @@
   <link rel="apple-touch-icon" href="assets/ac-favicon.png">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="home">
+<body>
   <a class="skip-link" href="#content">跳到内容</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="A'Chao Tech Blog 首页">
-        <img src="assets/lab-avatar.svg" width="56" height="56" alt="">
-        <span><strong>A'Chao Tech Blog</strong><small>♥</small></span>
-      </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="index.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>首页</a>
-        <a href="archive.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8"/></svg>文章</a>
-        <a href="projects.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>项目</a>
-        <a href="notes.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M7 3h9l4 4v14H7z"/><path d="M16 3v5h5M10 12h7M10 16h7"/></svg>笔记</a>
-        <a href="resources.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 17V7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10"/><path d="M8 21h8M12 17v4"/></svg>资源</a>
-        <a href="about.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>关于我</a>
-      </nav>
-      <div class="header-actions">
-        <a class="icon-link" href="archive.html" aria-label="搜索文章"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
-        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题" title="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></button>
-        <img class="user-avatar" src="assets/lab-avatar.svg" width="46" height="46" alt="">
-      </div>
-    </div>
-  </header>
-
-  <main id="content" class="site-main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <span class="hello-pill">Hi! 我是 A'Chao</span>
-        <h1 id="hero-title">用<span class="accent">代码</span>连接硬件，<br>用<span class="accent-pink">调试</span>记录成长</h1>
-        <p class="hero-lede">分享嵌入式系统学习与实践的点滴，记录每一次点亮的瞬间。</p>
-        <div class="button-row">
-          <a class="button primary" href="archive.html">探索文章 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="button ghost" href="projects.html"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 14 9 5 9-5"/></svg>查看项目</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-board">
-          <span class="spark a"></span><span class="spark b"></span><span class="spark c"></span>
-          <span class="sensor one"></span><span class="sensor two"></span>
-          <span class="code-screen"><i></i><i></i><i></i></span>
-          <span class="chip-core">A'Chao</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats-row" aria-label="站点数据">
-      <article class="stat-card"><span class="mini-icon">▤</span><div><small>文章</small><strong>42+ 篇</strong></div></article>
-      <article class="stat-card"><span class="mini-icon">⌘</span><div><small>项目</small><strong>18+ 个</strong></div></article>
-      <article class="stat-card"><span class="mini-icon">▣</span><div><small>学习天数</small><strong>365+ 天</strong></div></article>
-      <article class="stat-card"><span class="mini-icon">✦</span><div><small>调试次数</small><strong>2333+ 次</strong></div></article>
-    </section>
-
-    <div class="home-grid">
-      <section class="section-card glass-card">
-        <div class="section-head">
-          <h2 class="section-title"><span class="mini-icon">★</span>精选项目</h2>
-          <a class="section-link" href="projects.html">查看全部项目 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-        <div class="project-strip">
-          <article class="mini-project"><div class="thumb camera"><span class="badge pink">OpenMV</span></div><h3>OpenMV 智能视觉小车</h3><p>颜色识别、循迹与目标追踪。</p><div class="tag-list"><span class="tag pink">OpenMV</span><span class="tag">STM32</span></div></article>
-          <article class="mini-project"><div class="thumb"><span class="badge">STM32</span></div><h3>STM32F103 最小系统板</h3><p>系统板设计、焊接与外设调试。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">项目调试</span></div></article>
-          <article class="mini-project"><div class="thumb dark"><span class="badge">Verilog</span></div><h3>Verilog 简易 CPU 设计</h3><p>从零实现指令集核心。</p><div class="tag-list"><span class="tag">Verilog</span><span class="tag green">论文</span></div></article>
-          <article class="mini-project"><div class="thumb camera"><span class="badge pink">传感器</span></div><h3>多传感器环境监测站</h3><p>温湿度、光照与空气质量采集。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">项目调试</span></div></article>
-        </div>
-      </section>
-
-      <section class="section-card glass-card">
-        <div class="section-head">
-          <h2 class="section-title"><span class="mini-icon accent">▤</span>最近文章</h2>
-          <a class="section-link" href="archive.html">查看全部文章 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-        <div class="article-list">
-          <a href="posts/rtos-scheduler.html"><div class="thumb"></div><div><h3>STM32 外设学习笔记：定时器详解</h3><p><span class="tag">STM32</span></p></div><time>2024-05-18</time></a>
-          <a href="posts/edge-ai-inference.html"><div class="thumb camera"></div><div><h3>OpenMV 图像处理入门：颜色识别</h3><p><span class="tag pink">OpenMV</span></p></div><time>2024-05-15</time></a>
-          <a href="posts/ai-coding-workflow.html"><div class="thumb dark"></div><div><h3>Verilog 学习笔记：状态机设计</h3><p><span class="tag">Verilog</span></p></div><time>2024-05-12</time></a>
-          <a href="posts/out-of-stack-notes.html"><div class="thumb paper"></div><div><h3>阅读笔记：基于注意力机制的图像识别</h3><p><span class="tag green">论文</span></p></div><time>2024-05-10</time></a>
-          <a href="posts/github-pages-start.html"><div class="thumb monitor"></div><div><h3>项目调试经验分享：找 bug 的那些技巧</h3><p><span class="tag orange">项目调试</span></p></div><time>2024-05-08</time></a>
-        </div>
-      </section>
-    </div>
-
-    <section class="feature-row" aria-label="博客方向">
-      <article><img src="assets/lab-avatar.svg" width="80" height="80" alt=""><div><h3>记录学习</h3><p>记录嵌入式学习过程中的知识与思考。</p></div></article>
-      <article><div class="thumb camera"></div><div><h3>分享实践</h3><p>分享项目实践与调试经验。</p></div></article>
-      <article><div class="thumb"></div><div><h3>探索技术</h3><p>探索硬件与底层的奥秘。</p></div></article>
-      <article><div class="thumb paper"></div><div><h3>热爱生活</h3><p>代码之外，也要热爱生活。</p></div></article>
-    </section>
+  <main id="content" class="mock-page" aria-label="A'Chao Tech Blog 首页">
+    <img src="assets/mockups/main.png" width="1448" height="996" alt="A'Chao Tech Blog 首页界面">
+    <a class="hotspot" href="index.html" style="--left:5.6630%;--top:0.8032%;--width:21.4088%;--height:6.4257%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="index.html" style="--left:35.3591%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:42.1271%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">文章</span></a>
+    <a class="hotspot round" href="projects.html" style="--left:48.3425%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">项目</span></a>
+    <a class="hotspot round" href="notes.html" style="--left:54.5580%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">笔记</span></a>
+    <a class="hotspot round" href="resources.html" style="--left:60.7735%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">资源</span></a>
+    <a class="hotspot round" href="about.html" style="--left:66.7127%;--top:1.8072%;--width:6.2155%;--height:4.8193%;"><span class="screen-reader-text">关于我</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:83.0110%;--top:1.8072%;--width:3.3149%;--height:4.8193%;"><span class="screen-reader-text">搜索</span></a>
+    <a class="hotspot round" href="about.html" style="--left:89.7790%;--top:0.8032%;--width:4.8343%;--height:6.4257%;"><span class="screen-reader-text">个人头像</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:15.1934%;--top:34.3373%;--width:9.5304%;--height:4.0161%;"><span class="screen-reader-text">探索文章</span></a>
+    <a class="hotspot round" href="projects.html" style="--left:25.9669%;--top:34.3373%;--width:8.6326%;--height:4.0161%;"><span class="screen-reader-text">查看项目</span></a>
+    <a class="hotspot" href="projects.html" style="--left:54.5580%;--top:50.8032%;--width:7.5967%;--height:3.0120%;"><span class="screen-reader-text">查看全部项目</span></a>
+    <a class="hotspot" href="archive.html" style="--left:84.9448%;--top:50.8032%;--width:7.5967%;--height:3.0120%;"><span class="screen-reader-text">查看全部文章</span></a>
+    <a class="hotspot" href="projects.html" style="--left:8.0110%;--top:54.7189%;--width:12.9834%;--height:27.6104%;"><span class="screen-reader-text">OpenMV 智能视觉小车</span></a>
+    <a class="hotspot" href="projects.html" style="--left:21.9613%;--top:54.7189%;--width:12.9834%;--height:27.6104%;"><span class="screen-reader-text">STM32F103 最小系统板</span></a>
+    <a class="hotspot" href="projects.html" style="--left:35.7044%;--top:54.7189%;--width:12.9834%;--height:27.6104%;"><span class="screen-reader-text">Verilog 简易 CPU 设计</span></a>
+    <a class="hotspot" href="projects.html" style="--left:49.3785%;--top:54.7189%;--width:12.9834%;--height:27.6104%;"><span class="screen-reader-text">多传感器环境监测站</span></a>
+    <a class="hotspot" href="archive.html" style="--left:65.1934%;--top:54.7189%;--width:27.9696%;--height:32.1285%;"><span class="screen-reader-text">最近文章</span></a>
   </main>
-
-  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog. All rights reserved.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
-  <script src="assets/script.js"></script>
 </body>
 </html>

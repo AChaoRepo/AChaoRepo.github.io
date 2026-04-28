@@ -9,45 +9,26 @@
   <link rel="apple-touch-icon" href="assets/ac-favicon.png">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="projects">
+<body>
   <a class="skip-link" href="#content">跳到内容</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html"><img src="assets/lab-avatar.svg" width="56" height="56" alt=""><span><strong>A'Chao Tech Blog</strong><small>♥</small></span></a>
-      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="archive.html">文章</a><a href="projects.html" aria-current="page">项目</a><a href="notes.html">笔记</a><a href="resources.html">资源</a><a href="about.html">关于我</a></nav>
-      <div class="header-actions"><a class="icon-link" href="archive.html" aria-label="搜索"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a><button class="icon-button" id="themeToggle" type="button" aria-label="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></button><img class="user-avatar" src="assets/lab-avatar.svg" width="46" height="46" alt=""></div>
-    </div>
-  </header>
-
-  <main id="content" class="site-main">
-    <section class="page-hero has-art project-page-hero">
-      <div><h1><span class="accent">项目</span> / 我的项目实践</h1><p>记录我在嵌入式、硬件、FPGA 与 AI 方向的实践项目与探索历程。</p></div>
-      <div class="project-summary"><article class="stat-card"><span class="mini-icon">◇</span><div><small>项目总数</small><strong>28 个</strong></div></article><article class="stat-card"><span class="mini-icon">✓</span><div><small>已完成</small><strong>16 个</strong></div></article><article class="stat-card"><span class="mini-icon">⌛</span><div><small>进行中</small><strong>8 个</strong></div></article><article class="stat-card"><span class="mini-icon">↗</span><div><small>累计代码行数</small><strong>128K+</strong></div></article></div>
-    </section>
-
-    <section class="filter-row" aria-label="项目分类">
-      <button class="filter-button is-active" type="button">全部</button><button class="filter-button" type="button">OpenMV</button><button class="filter-button" type="button">STM32</button><button class="filter-button" type="button">FPGA</button><button class="filter-button" type="button">物联网</button><button class="filter-button" type="button">AI 部署</button><button class="filter-button" type="button">毕设项目</button>
-    </section>
-
-    <section class="project-hero-card glass-card">
-      <div class="thumb camera"><span class="badge pink">精选项目</span></div>
-      <div><span class="badge pink">OpenMV</span><h2>OpenMV智能视觉小车</h2><p>基于 OpenMV 的颜色识别与循迹小车，集成巡线、颜色跟随与目标追踪功能，通过 PID 算法优化运动控制，支持上位机调参与数据可视化。</p><div class="tag-list"><span class="tag">颜色识别</span><span class="tag">PID循迹</span><span class="tag">目标追踪</span><span class="tag">上位机调参</span></div></div>
-      <div><ul class="progress-list"><li><span>完成度 <b>100%</b></span><div class="bar"><i style="width:100%"></i></div></li><li><span>完成时间 <b>2024-05-15</b></span></li><li><span>技术栈 <b>OpenMV / STM32 / PWM</b></span></li></ul><a class="button primary" href="archive.html">查看详情</a></div>
-    </section>
-
-    <section class="project-grid" aria-label="项目列表">
-      <article class="project-card"><div class="thumb monitor"><span class="badge">STM32</span></div><h2>STM32充电桩计费系统</h2><p>刷卡计费、功率检测、计时计费与数据上传。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag green">电能计量</span></div><div class="bar"><i style="width:90%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-      <article class="project-card"><div class="thumb dark"><span class="badge">FPGA</span></div><h2>FPGA 贪吃蛇游戏</h2><p>VGA 显示、按键控制、分数统计与状态机设计。</p><div class="tag-list"><span class="tag">Verilog</span><span class="tag">VGA</span></div><div class="bar"><i style="width:100%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-      <article class="project-card"><div class="thumb"><span class="badge">物联网</span></div><h2>农业光照监测系统</h2><p>传感器采集、云平台上传与环境数据可视化。</p><div class="tag-list"><span class="tag">ESP32</span><span class="tag green">传感器</span></div><div class="bar"><i style="width:85%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-      <article class="project-card"><div class="thumb monitor"><span class="badge pink">AI部署</span></div><h2>语音识别系统</h2><p>关键词识别、离线推理与屏幕文本显示。</p><div class="tag-list"><span class="tag pink">语音识别</span><span class="tag">C++</span></div><div class="bar"><i style="width:75%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-      <article class="project-card"><div class="thumb"><span class="badge pink">AI部署</span></div><h2>轻量化AI部署</h2><p>STM32 上部署 TinyML 模型，探索模型压缩与优化。</p><div class="tag-list"><span class="tag pink">TinyML</span><span class="tag">量化</span></div><div class="bar"><i style="width:60%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-      <article class="project-card"><div class="thumb dark"><span class="badge">STM32</span></div><h2>STM32示波器</h2><p>ADC 采样、OLED 波形显示与高速采样实验。</p><div class="tag-list"><span class="tag">ADC</span><span class="tag">OLED</span></div><div class="bar"><i style="width:40%"></i></div><a class="button ghost" href="#">查看详情</a></article>
-    </section>
-
-    <section class="wide-note glass-card"><strong>持续学习，持续实践，做有趣的嵌入式项目。</strong></section>
+  <main id="content" class="mock-page" aria-label="项目页面">
+    <img src="assets/mockups/projects.png" width="1448" height="996" alt="项目页面界面">
+    <a class="hotspot" href="index.html" style="--left:5.6630%;--top:0.8032%;--width:21.4088%;--height:6.4257%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="index.html" style="--left:35.3591%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">首页</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:42.1271%;--top:1.8072%;--width:5.1796%;--height:4.8193%;"><span class="screen-reader-text">文章</span></a>
+    <a class="hotspot round" href="projects.html" style="--left:48.3425%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">项目</span></a>
+    <a class="hotspot round" href="notes.html" style="--left:54.5580%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">笔记</span></a>
+    <a class="hotspot round" href="resources.html" style="--left:60.7735%;--top:1.8072%;--width:5.2486%;--height:4.8193%;"><span class="screen-reader-text">资源</span></a>
+    <a class="hotspot round" href="about.html" style="--left:66.7127%;--top:1.8072%;--width:6.2155%;--height:4.8193%;"><span class="screen-reader-text">关于我</span></a>
+    <a class="hotspot round" href="archive.html" style="--left:83.0110%;--top:1.8072%;--width:3.3149%;--height:4.8193%;"><span class="screen-reader-text">搜索</span></a>
+    <a class="hotspot round" href="about.html" style="--left:89.7790%;--top:0.8032%;--width:4.8343%;--height:6.4257%;"><span class="screen-reader-text">个人头像</span></a>
+    <a class="hotspot" href="projects.html" style="--left:6.9061%;--top:40.9639%;--width:86.3260%;--height:20.5823%;"><span class="screen-reader-text">OpenMV 智能视觉小车</span></a>
+    <a class="hotspot" href="projects.html" style="--left:6.6298%;--top:63.4538%;--width:13.4669%;--height:33.1325%;"><span class="screen-reader-text">STM32 充电桩计费系统</span></a>
+    <a class="hotspot" href="projects.html" style="--left:21.1326%;--top:63.4538%;--width:14.5028%;--height:33.1325%;"><span class="screen-reader-text">FPGA 贪吃蛇游戏</span></a>
+    <a class="hotspot" href="projects.html" style="--left:36.7403%;--top:63.4538%;--width:14.5028%;--height:33.1325%;"><span class="screen-reader-text">农业光照监测系统</span></a>
+    <a class="hotspot" href="projects.html" style="--left:52.4862%;--top:63.4538%;--width:14.5028%;--height:33.1325%;"><span class="screen-reader-text">语音识别系统</span></a>
+    <a class="hotspot" href="projects.html" style="--left:67.9558%;--top:63.4538%;--width:14.5028%;--height:33.1325%;"><span class="screen-reader-text">轻量化 AI 部署</span></a>
+    <a class="hotspot" href="projects.html" style="--left:83.2182%;--top:63.4538%;--width:13.1215%;--height:33.1325%;"><span class="screen-reader-text">STM32 示波器</span></a>
   </main>
-
-  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
-  <script src="assets/script.js"></script>
 </body>
 </html>
