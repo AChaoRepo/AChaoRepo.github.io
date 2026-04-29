@@ -777,17 +777,18 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .robot-arm {
-  left: 27%;
-  top: 32%;
-  width: 170px;
-  height: 150px;
-  transform: rotate(-9deg);
-  transform-origin: 48px 118px;
+  left: 5%;
+  top: 17%;
+  z-index: 8;
+  width: 214px;
+  height: 188px;
+  transform: scale(1.18) rotate(-12deg);
+  transform-origin: 54px 148px;
 }
 
 .robot-arm:hover,
 .robot-arm:focus-visible {
-  transform: translateY(-5px) scale(1.03) rotate(-9deg);
+  transform: translateY(-6px) scale(1.24) rotate(-12deg);
 }
 
 .arm-base {
@@ -1818,15 +1819,15 @@ html[data-theme="dark"] .icon-btn {
   }
 
   .robot-arm {
-    left: 24%;
-    top: 31%;
-    transform: scale(0.78) rotate(-9deg);
-    transform-origin: 48px 118px;
+    left: 3%;
+    top: 18%;
+    transform: scale(0.92) rotate(-12deg);
+    transform-origin: 54px 148px;
   }
 
   .robot-arm:hover,
   .robot-arm:focus-visible {
-    transform: translateY(-5px) scale(0.82) rotate(-9deg);
+    transform: translateY(-5px) scale(0.96) rotate(-12deg);
   }
 
   .article {
