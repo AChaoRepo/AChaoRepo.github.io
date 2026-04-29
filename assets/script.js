@@ -182,4 +182,75 @@
       }
     });
   });
+
+  const siteHeader = document.querySelector(".site-header");
+  if (siteHeader) {
+    const syncHeaderState = () => {
+      siteHeader.classList.toggle("scrolled", window.scrollY > 14);
+    };
+    syncHeaderState();
+    window.addEventListener("scroll", syncHeaderState, { passive: true });
+  }
+
+  const homeSearchToggle = document.getElementById("searchToggle");
+  const homeSearchBox = document.getElementById("homeSearchBox");
+  const homeSearchInput = document.getElementById("homeSearchInput");
+  homeSearchToggle?.addEventListener("click", () => {
+    homeSearchBox?.classList.toggle("open");
+    if (homeSearchBox?.classList.contains("open")) {
+      homeSearchInput?.focus();
+    }
+  });
+
+  const homeModal = document.getElementById("homeModal");
+  const homeModalTitle = document.getElementById("homeModalTitle");
+  const homeModalDesc = document.getElementById("homeModalDesc");
+
+  function closeHomeModal() {
+    if (homeModal) {
+      homeModal.hidden = true;
+    }
+  }
+
+  document.querySelectorAll("[data-home-modal]").forEach((item) => {
+    if (!item.hasAttribute("tabindex") && item.tagName !== "BUTTON") {
+      item.setAttribute("tabindex", "0");
+      item.setAttribute("role", "button");
+    }
+
+    const openHomeModal = () => {
+      if (!homeModal || !homeModalTitle || !homeModalDesc) {
+        return;
+      }
+      document.querySelectorAll("[data-home-modal]").forEach((node) => node.classList.remove("is-active"));
+      item.classList.add("is-active");
+      homeModalTitle.textContent = item.dataset.title || "详情";
+      homeModalDesc.textContent = item.dataset.desc || "这部分内容会继续完善。";
+      homeModal.hidden = false;
+    };
+
+    item.addEventListener("click", (event) => {
+      event.preventDefault();
+      openHomeModal();
+    });
+
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openHomeModal();
+      }
+    });
+  });
+
+  homeModal?.addEventListener("click", (event) => {
+    if (event.target === homeModal || event.target.matches("[data-home-modal-close]")) {
+      closeHomeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeHomeModal();
+    }
+  });
 })();

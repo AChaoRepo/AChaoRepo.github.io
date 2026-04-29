@@ -4,150 +4,193 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A'Chao Tech Blog</title>
-  <meta name="description" content="A'Chao 的嵌入式、硬件调试、AI 部署与学习记录博客。">
+  <meta name="description" content="A'Chao 的嵌入式技术博客，记录嵌入式开发、图像识别、硬件调试与项目实践。">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/ac-favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/homepage.css">
 </head>
 <body data-page="home">
-  <a class="skip-link" href="#content">跳到内容</a>
+  <aside class="side-decor left" aria-hidden="true">
+    <span class="decor-dot"></span>
+    <div class="decor-chip small">STM</div>
+    <div class="decor-code">main.c<span></span><span></span><span></span></div>
+    <div class="decor-label">EMBEDDED</div>
+    <div class="decor-bubble"><strong>OpenMV</strong>视觉识别 · 图像处理</div>
+    <div class="decor-sensor"></div>
+    <span class="decor-dot tiny"></span>
+    <div class="decor-chip purple">FPGA</div>
+    <div class="decor-wave"></div>
+    <div class="decor-note">调试记录<span class="line mid"></span><span class="line short"></span></div>
+    <div class="decor-pin">GPIO</div>
+  </aside>
+
+  <aside class="side-decor right" aria-hidden="true">
+    <span class="decor-dot"></span>
+    <div class="decor-mini-board"></div>
+    <div class="decor-card-mini"><strong>Build Log</strong>嵌入式项目沉淀<span>README</span></div>
+    <div class="decor-label">TECH BLOG</div>
+    <div class="decor-bubble"><strong>AI Deploy</strong>TFLite · 边缘推理</div>
+    <div class="decor-orbit"></div>
+    <span class="decor-dot tiny"></span>
+    <div class="decor-chip pink">I2C</div>
+    <div class="decor-wave"></div>
+    <div class="decor-note">UART / SPI<span class="line"></span><span class="line short"></span></div>
+    <div class="decor-chip green">ADC</div>
+  </aside>
+
   <header class="site-header">
-    <div class="header-inner">
+    <nav class="nav" aria-label="主导航">
       <a class="brand" href="index.html" aria-label="A'Chao Tech Blog 首页">
-        <img src="assets/site-logo-mark.png" width="56" height="56" alt="">
-        <span><strong>A'Chao Tech Blog</strong><small>♥</small></span>
+        <span class="brand-mark">AC</span>
+        <span>A'Chao Tech Blog</span>
       </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="index.html" aria-current="page">首页</a>
-        <a href="archive.html">文章</a>
-        <a href="projects.html">项目</a>
-        <a href="notes.html">笔记</a>
-        <a href="resources.html">资源</a>
-        <a href="about.html">关于我</a>
-      </nav>
-      <div class="header-actions">
-        <a class="icon-link" href="archive.html" aria-label="搜索文章"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
-        <button class="icon-button" id="themeToggle" type="button" aria-label="切换主题"><svg data-theme-icon="moon" viewBox="0 0 24 24"><path d="M21 14.2A8.5 8.5 0 0 1 9.8 3a7 7 0 1 0 11.2 11.2Z"/></svg><svg data-theme-icon="sun" viewBox="0 0 24 24" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41"/></svg></button>
-        <img class="user-avatar" src="assets/apple-touch-icon.png" width="46" height="46" alt="">
+      <div class="nav-links">
+        <a class="nav-link active" href="index.html">首页</a>
+        <a class="nav-link" href="archive.html">文章</a>
+        <a class="nav-link" href="projects.html">项目</a>
+        <a class="nav-link" href="notes.html">笔记</a>
+        <a class="nav-link" href="resources.html">资源</a>
+        <a class="nav-link" href="about.html">关于我</a>
       </div>
-    </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchToggle" type="button" aria-label="搜索">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="切换主题">
+          <svg data-theme-icon="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8Z"/></svg>
+          <svg data-theme-icon="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+        </button>
+      </div>
+    </nav>
   </header>
 
-  <main id="content" class="site-main">
+  <div class="search-box" id="homeSearchBox">
+    <label>
+      <span>搜索</span>
+      <input class="search-input" data-search id="homeSearchInput" type="search" placeholder="搜索文章、项目、笔记...">
+    </label>
+  </div>
+
+  <main class="page" id="home">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <span class="hello-pill">Hi! 我是 A'Chao 👋</span>
-        <h1 id="hero-title">用<span class="accent">代码</span>连接硬件，<br>用<span class="accent-pink">调试</span>记录成长</h1>
-        <p class="hero-lede">分享嵌入式系统学习与实践的点滴，记录每一次点亮的瞬间。</p>
-        <div class="button-row">
-          <a class="button primary" href="archive.html">探索文章 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="button ghost" href="projects.html"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 14 9 5 9-5"/></svg>查看项目</a>
+      <div class="hero-content">
+        <div class="eyebrow">Hi! 我是 A'Chao</div>
+        <h1 class="hero-title" id="hero-title">用<span class="blue">代码</span>连接硬件，<br>用<span class="pink">调试</span>记录成长</h1>
+        <p class="hero-desc">分享嵌入式系统学习与实践的点滴，记录 OpenMV、STM32、FPGA、传感器、轻量化 AI 部署等方向的项目经验。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="archive.html">探索文章 →</a>
+          <a class="btn btn-secondary" href="projects.html">查看项目</a>
+        </div>
+        <div class="stats" aria-label="博客统计">
+          <div class="stat"><i class="stat-icon">文</i><div><span>文章</span><strong>42+</strong></div></div>
+          <div class="stat"><i class="stat-icon">项</i><div><span>项目</span><strong>18+</strong></div></div>
+          <div class="stat"><i class="stat-icon">学</i><div><span>学习天数</span><strong>365+</strong></div></div>
+          <div class="stat"><i class="stat-icon">调</i><div><span>调试次数</span><strong>2333+</strong></div></div>
         </div>
       </div>
-      <div class="hero-art">
-        <div class="hero-board" role="group" aria-label="可交互的嵌入式硬件展示板">
-          <span class="board-orbit one" aria-hidden="true"></span>
-          <span class="board-orbit two" aria-hidden="true"></span>
-          <span class="float-mark star-left" aria-hidden="true">★</span>
-          <span class="float-mark star-mid" aria-hidden="true">✦</span>
-          <span class="float-mark star-right" aria-hidden="true">✦</span>
-          <span class="float-mark binary" aria-hidden="true">1010<br>0110</span>
-          <span class="float-mark code-bubble" aria-hidden="true">{ }</span>
 
-          <div class="pcb-plane" aria-hidden="true">
-            <svg class="trace-map" viewBox="0 0 720 360" preserveAspectRatio="none">
-              <path d="M88 242H280M128 205h120l48-52h164M426 226h118l58-68M322 292h86l54-76M174 282h92l36-46M470 286h98l64-84" />
-              <path d="M314 100v76M352 82v92M394 98v82M248 136h86M434 128h70M522 112h92" />
-              <circle cx="88" cy="242" r="7" /><circle cx="128" cy="205" r="7" /><circle cx="602" cy="158" r="7" /><circle cx="632" cy="202" r="7" /><circle cx="248" cy="136" r="7" /><circle cx="568" cy="286" r="7" />
-            </svg>
-            <span class="solder-dot d1"></span><span class="solder-dot d2"></span><span class="solder-dot d3"></span><span class="solder-dot d4"></span><span class="solder-dot d5"></span><span class="solder-dot d6"></span>
-          </div>
-
-          <button class="hero-part camera-module" type="button" data-hero-part data-hero-title="视觉采集模块" data-hero-text="摄像头负责采集图像输入，适合 OpenMV、目标识别和边缘视觉实验。" aria-label="查看视觉采集模块">
-            <span class="camera-shell"><span class="lens"><i></i></span></span>
-            <span class="pin-cable"><i></i><i></i><i></i><i></i></span>
-          </button>
-
-          <button class="hero-part code-display" type="button" data-hero-part data-hero-title="代码与调试屏" data-hero-text="把固件逻辑、串口日志和实验现象写成可复盘的技术文章。" aria-label="查看代码与调试屏">
-            <span class="window-dots"><i></i><i></i><i></i></span>
-            <span class="code-lines"><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="code-mark">&lt;/&gt;</span>
-          </button>
-
-          <button class="hero-part mcu-chip is-active" type="button" data-hero-part data-hero-title="A'Chao 主控核心" data-hero-text="以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期博客。" aria-label="查看 A'Chao 主控核心">
-            <span>A'Chao <b>♥</b></span>
-          </button>
-
-          <button class="hero-part ultrasonic-module" type="button" data-hero-part data-hero-title="传感器接口" data-hero-text="记录摄像头、超声波、温湿度、光照等传感器的接线、驱动和调试过程。" aria-label="查看传感器接口">
-            <span class="sonar"><i></i></span><span class="sonar"><i></i></span>
-          </button>
-
-          <button class="hero-part led-module" type="button" data-hero-part data-hero-title="状态指示灯" data-hero-text="从点亮 LED 到定位系统状态，把每一步调试都变成可复用经验。" aria-label="查看状态指示灯">
-            <span></span><i></i><i></i>
-          </button>
-
-          <button class="hero-part mini-chip chip-a" type="button" data-hero-part data-hero-title="外设芯片" data-hero-text="外设芯片、通信总线和驱动代码，是嵌入式项目里最值得沉淀的细节。" aria-label="查看外设芯片"></button>
-          <button class="hero-part mini-chip chip-b" type="button" data-hero-part data-hero-title="电源与接口" data-hero-text="电源、接口、焊接和板级问题会被整理成排查清单。" aria-label="查看电源与接口"></button>
-
-          <button class="hero-debug-card hero-part" type="button" data-hero-part data-hero-title="调试次数" data-hero-text="每一次失败、重烧、串口输出和波形确认，都是博客里的一条成长记录。" aria-label="查看调试次数">
-            <span class="bug-icon">✿</span>
-            <span><small>调试次数</small><strong>2333+ 次</strong></span>
-          </button>
-
-          <p class="hero-insight" aria-live="polite">
-            <strong id="heroInsightTitle">A'Chao 主控核心</strong>
-            <span id="heroInsightText">以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期博客。</span>
-          </p>
+      <div class="hero-lab" aria-label="可交互嵌入式电路板">
+        <span class="lab-star s1">★</span>
+        <span class="lab-star s2">✦</span>
+        <span class="lab-star s3">✦</span>
+        <span class="lab-code-bubble">{ }</span>
+        <span class="lab-binary">1010<br>0110</span>
+        <span class="lab-orbit"></span>
+        <div class="lab-board" aria-hidden="true">
+          <svg viewBox="0 0 700 360" preserveAspectRatio="none">
+            <path d="M80 245h190l46-56h130M126 205h116l60-72h172M380 250h130l72-80M250 300h130l70-84M455 310h88l56-62" />
+            <path d="M300 92v118M345 80v116M390 100v108M160 258v48M520 126h104M500 178h126" />
+            <circle cx="80" cy="245" r="7"/><circle cx="126" cy="205" r="7"/><circle cx="582" cy="170" r="7"/><circle cx="624" cy="126" r="7"/><circle cx="250" cy="300" r="7"/>
+          </svg>
         </div>
+
+        <button class="lab-part camera-module" type="button" data-home-modal data-title="OpenMV 视觉模块" data-desc="摄像头模块用于颜色识别、目标追踪和视觉循迹，是博客里图像处理项目的入口。">
+          <span class="camera-shell"><span class="lens"><i></i></span></span>
+          <span class="camera-pins"><i></i><i></i><i></i><i></i></span>
+        </button>
+
+        <button class="lab-part code-display" type="button" data-home-modal data-title="代码与调试屏" data-desc="记录固件逻辑、串口日志、状态机和实验结果，把每一次调试变成可复盘的文章。">
+          <span class="window-dots"><i></i><i></i><i></i></span>
+          <span class="code-lines"><i></i><i></i><i></i><i></i><i></i></span>
+          <b>&lt;/&gt;</b>
+        </button>
+
+        <button class="lab-part main-chip" type="button" data-home-modal data-title="A'Chao 主控核心" data-desc="以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期技术博客。">
+          <span>A'Chao <em>♥</em></span>
+        </button>
+
+        <button class="lab-part ultrasonic" type="button" data-home-modal data-title="传感器接口" data-desc="整理摄像头、超声波、温湿度、光照等传感器的接线、驱动和排障经验。">
+          <span><i></i></span><span><i></i></span>
+        </button>
+
+        <button class="lab-part led-part" type="button" data-home-modal data-title="状态指示灯" data-desc="从点亮 LED 到定位系统状态，把每一步硬件验证记录下来。">
+          <span></span><i></i><i></i>
+        </button>
+
+        <button class="lab-part mini-chip chip-a" type="button" data-home-modal data-title="外设芯片" data-desc="外设芯片、通信总线和驱动代码，是嵌入式项目最值得沉淀的细节。"></button>
+        <button class="lab-part mini-chip chip-b" type="button" data-home-modal data-title="电源与接口" data-desc="电源、接口、焊接和板级问题会被整理成排查清单。"></button>
       </div>
     </section>
 
-    <section class="stats-row" aria-label="站点数据">
-      <article class="stat-card"><span class="mini-icon">▤</span><div><small>文章</small><strong>42+ 篇</strong></div></article>
-      <article class="stat-card"><span class="mini-icon">⌘</span><div><small>项目</small><strong>18+ 个</strong></div></article>
-      <article class="stat-card"><span class="mini-icon">▣</span><div><small>学习天数</small><strong>365+ 天</strong></div></article>
-    </section>
-
-    <div class="home-grid">
-      <section class="section-card glass-card" aria-labelledby="featured-projects">
-        <div class="section-head">
-          <h2 class="section-title" id="featured-projects"><span class="mini-icon">★</span>精选项目</h2>
-          <a class="section-link" href="projects.html">查看全部项目 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <section class="section grid-main">
+      <div class="panel" id="projects">
+        <div class="panel-head">
+          <h2 class="section-title">精选项目</h2>
+          <a class="link-more" href="projects.html">查看全部项目 →</a>
         </div>
-        <div class="project-strip">
-          <article class="mini-project"><div class="thumb camera"><span class="badge pink">OpenMV</span></div><h3>OpenMV 智能视觉小车</h3><p>颜色识别、循迹与目标追踪。</p><div class="tag-list"><span class="tag pink">OpenMV</span><span class="tag">STM32</span></div></article>
-          <article class="mini-project"><div class="thumb"><span class="badge">STM32</span></div><h3>STM32F103 最小系统板</h3><p>系统板设计、焊接与外设调试。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">项目调试</span></div></article>
-          <article class="mini-project"><div class="thumb dark"><span class="badge">Verilog</span></div><h3>Verilog 简易 CPU 设计</h3><p>从零实现指令集核心。</p><div class="tag-list"><span class="tag">Verilog</span><span class="tag green">论文</span></div></article>
-          <article class="mini-project"><div class="thumb camera"><span class="badge pink">传感器</span></div><h3>多传感器环境监测站</h3><p>温湿度、光照与空气质量采集。</p><div class="tag-list"><span class="tag">STM32</span><span class="tag orange">项目调试</span></div></article>
+        <div class="project-list">
+          <article class="project-card" data-title="OpenMV 智能视觉小车" data-tags="openmv stm32 vision" data-home-modal data-desc="基于 OpenMV 的颜色识别与循迹小车，实现视觉避障、目标跟随与巡线控制。">
+            <div class="thumb"><span class="tag-top">OpenMV</span><svg viewBox="0 0 220 140" fill="none"><rect x="66" y="24" width="88" height="76" rx="16" fill="#6bb8ff"/><circle cx="110" cy="62" r="27" fill="#1d2940"/><circle cx="110" cy="62" r="16" fill="#4255a8"/><circle cx="116" cy="56" r="7" fill="#bde5ff"/><rect x="70" y="103" width="14" height="28" rx="4" fill="#ffc269"/><rect x="94" y="103" width="14" height="28" rx="4" fill="#ffc269"/><rect x="118" y="103" width="14" height="28" rx="4" fill="#ffc269"/><rect x="142" y="103" width="14" height="28" rx="4" fill="#ffc269"/></svg></div>
+            <div class="card-body"><h3 class="card-title">OpenMV 智能视觉小车</h3><p class="card-text">基于 OpenMV 的颜色识别与循迹小车，实现视觉避障与跟随。</p><div class="tags"><span class="tag pink">OpenMV</span><span class="tag">STM32</span></div></div>
+          </article>
+          <article class="project-card" data-title="STM32F103 最小系统板" data-tags="stm32 embedded board" data-home-modal data-desc="基于 STM32F103C8T6 的最小系统板设计、外设驱动与调试记录。">
+            <div class="thumb"><span class="tag-top blue">STM32</span><svg viewBox="0 0 220 140" fill="none"><rect x="44" y="32" width="132" height="82" rx="14" fill="#3c96ff"/><rect x="62" y="48" width="96" height="42" rx="8" fill="#192944"/><path d="M74 60h70M74 72h56M74 84h72" stroke="#5de2a7" stroke-width="4" stroke-linecap="round"/><path d="M44 48H24M44 70H24M44 92H24M176 48h20M176 70h20M176 92h20" stroke="#ffe6a8" stroke-width="6" stroke-linecap="round"/></svg></div>
+            <div class="card-body"><h3 class="card-title">STM32F103 最小系统板</h3><p class="card-text">基于 STM32F103C8T6 的最小系统板设计与调试。</p><div class="tags"><span class="tag">STM32</span><span class="tag gold">项目调试</span></div></div>
+          </article>
+          <article class="project-card" data-title="Verilog 简易 CPU 设计" data-tags="fpga verilog cpu" data-home-modal data-desc="从零实现一个支持基本指令集的简易 CPU 核心，包含仿真与验证。">
+            <div class="thumb"><span class="tag-top purple">Verilog</span><svg viewBox="0 0 220 140" fill="none"><rect x="28" y="25" width="164" height="90" rx="14" fill="#17233b"/><path d="M40 76c12 0 12-42 24-42s12 68 24 68 12-52 24-52 12 42 24 42 12-28 24-28 12 17 24 17" stroke="#58f29f" stroke-width="5" stroke-linecap="round"/><path d="M40 92h144M40 48h144" stroke="#31425f" stroke-width="2"/></svg></div>
+            <div class="card-body"><h3 class="card-title">Verilog 简易 CPU 设计</h3><p class="card-text">从零实现一个支持基本指令集的简易 CPU 核心。</p><div class="tags"><span class="tag purple">Verilog</span><span class="tag green">论文</span></div></div>
+          </article>
+          <article class="project-card" data-title="多传感器环境监测站" data-tags="sensor stm32 iot" data-home-modal data-desc="集成温湿度、光照、空气质量等传感器，实现环境数据采集与展示。">
+            <div class="thumb"><span class="tag-top">传感器</span><svg viewBox="0 0 220 140" fill="none"><rect x="45" y="39" width="130" height="66" rx="14" fill="#4aa3ff"/><circle cx="82" cy="72" r="26" fill="#eef8ff"/><circle cx="82" cy="72" r="17" fill="#1d2940"/><circle cx="138" cy="72" r="26" fill="#eef8ff"/><circle cx="138" cy="72" r="17" fill="#1d2940"/><path d="M66 112h88" stroke="#ffc269" stroke-width="5" stroke-linecap="round"/></svg></div>
+            <div class="card-body"><h3 class="card-title">多传感器环境监测站</h3><p class="card-text">集成温湿度、光照、空气质量的环境监测系统。</p><div class="tags"><span class="tag">STM32</span><span class="tag gold">项目调试</span></div></div>
+          </article>
         </div>
-      </section>
+      </div>
 
-      <section class="section-card glass-card" aria-labelledby="recent-posts">
-        <div class="section-head">
-          <h2 class="section-title" id="recent-posts"><span class="mini-icon">▤</span>最近文章</h2>
-          <a class="section-link" href="archive.html">查看全部文章 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <aside class="panel" id="articles">
+        <div class="panel-head">
+          <h2 class="section-title">最近文章</h2>
+          <a class="link-more" href="archive.html">查看全部文章 →</a>
         </div>
         <div class="article-list">
-          <a href="posts/rtos-scheduler.html"><div class="thumb"></div><div><h3>STM32 外设学习笔记：定时器详解</h3><p><span class="tag">STM32</span></p></div><time>2024-05-18</time></a>
-          <a href="posts/edge-ai-inference.html"><div class="thumb camera"></div><div><h3>OpenMV 图像处理入门：颜色识别</h3><p><span class="tag pink">OpenMV</span></p></div><time>2024-05-15</time></a>
-          <a href="posts/ai-coding-workflow.html"><div class="thumb dark"></div><div><h3>Verilog 学习笔记：状态机设计</h3><p><span class="tag">Verilog</span></p></div><time>2024-05-12</time></a>
-          <a href="posts/out-of-stack-notes.html"><div class="thumb paper"></div><div><h3>阅读笔记：基于注意力机制的图像识别</h3><p><span class="tag green">论文</span></p></div><time>2024-05-10</time></a>
-          <a href="posts/github-pages-start.html"><div class="thumb monitor"></div><div><h3>项目调试经验分享：找 bug 的那些技巧</h3><p><span class="tag orange">项目调试</span></p></div><time>2024-05-08</time></a>
+          <a class="article" href="posts/rtos-scheduler.html" data-title="STM32 外设学习笔记 定时器详解" data-tags="stm32 embedded"><span class="article-thumb">MCU</span><div><h3>STM32 外设学习笔记：定时器详解</h3><div class="meta"><span class="tag">STM32</span></div></div><time>2024-05-18</time></a>
+          <a class="article" href="posts/edge-ai-inference.html" data-title="OpenMV 图像处理入门 颜色识别" data-tags="openmv ai"><span class="article-thumb">CAM</span><div><h3>OpenMV 图像处理入门：颜色识别</h3><div class="meta"><span class="tag pink">OpenMV</span></div></div><time>2024-05-15</time></a>
+          <a class="article" href="posts/ai-coding-workflow.html" data-title="Verilog 学习笔记 状态机设计" data-tags="verilog fpga"><span class="article-thumb">FPGA</span><div><h3>Verilog 学习笔记：状态机设计</h3><div class="meta"><span class="tag purple">Verilog</span></div></div><time>2024-05-12</time></a>
+          <a class="article" href="posts/out-of-stack-notes.html" data-title="阅读笔记 基于注意力机制的图像识别" data-tags="paper ai"><span class="article-thumb">AI</span><div><h3>阅读笔记：基于注意力机制的图像识别</h3><div class="meta"><span class="tag green">论文</span></div></div><time>2024-05-10</time></a>
+          <a class="article" href="posts/github-pages-start.html" data-title="项目调试经验 找 bug 技巧" data-tags="debug project"><span class="article-thumb">BUG</span><div><h3>项目调试经验分享：找 bug 的那些技巧</h3><div class="meta"><span class="tag gold">项目调试</span></div></div><time>2024-05-08</time></a>
         </div>
-      </section>
-    </div>
+      </aside>
+    </section>
 
-    <section class="feature-row" aria-label="博客方向">
-      <article><img src="assets/apple-touch-icon.png" width="78" height="78" alt=""><div><h3>记录学习</h3><p>记录嵌入式学习过程中的知识与思考。</p></div></article>
-      <article><div class="thumb camera"></div><div><h3>分享实践</h3><p>分享项目实践与调试经验。</p></div></article>
-      <article><div class="thumb"></div><div><h3>探索技术</h3><p>探索硬件与底层的奥秘。</p></div></article>
-      <article><div class="thumb paper"></div><div><h3>热爱生活</h3><p>代码之外，也要热爱生活。</p></div></article>
+    <section class="values panel" id="notes">
+      <article class="value"><div class="value-icon">记</div><div><h3>记录学习</h3><p>记录嵌入式学习过程中的知识与思考，沉淀每一步成长。</p></div></article>
+      <article class="value"><div class="value-icon">享</div><div><h3>分享实践</h3><p>分享项目实践与调试经验，让技术被更多人看到。</p></div></article>
+      <article class="value"><div class="value-icon">探</div><div><h3>探索技术</h3><p>探索硬件与底层的奥秘，保持好奇，持续学习。</p></div></article>
+      <article class="value"><div class="value-icon">热</div><div><h3>热爱生活</h3><p>代码之外，也要保持热爱，把学习变成长期习惯。</p></div></article>
     </section>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year">2026</span> A'Chao Tech Blog. All rights reserved.</p><p>用代码连接硬件，用调试记录成长。</p></footer>
+  <div class="modal" id="homeModal" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="homeModalTitle">
+      <h2 id="homeModalTitle">标题</h2>
+      <p id="homeModalDesc">内容</p>
+      <button class="btn btn-primary" type="button" data-home-modal-close>关闭</button>
+    </section>
+  </div>
+
   <script src="assets/script.js"></script>
 </body>
 </html>
