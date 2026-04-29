@@ -98,13 +98,20 @@
         <span class="lab-code-bubble">{ }</span>
         <span class="lab-binary">1010<br>0110</span>
         <span class="lab-orbit"></span>
+        <span class="board-depth" aria-hidden="true"></span>
+        <span class="edge-connector" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="silk-label label-a" aria-hidden="true">GPIO</span>
+        <span class="silk-label label-b" aria-hidden="true">I2C</span>
+        <span class="silk-label label-c" aria-hidden="true">PWM</span>
         <div class="lab-board" aria-hidden="true">
           <svg viewBox="0 0 700 360" preserveAspectRatio="none">
-            <path d="M80 245h190l46-56h130M126 205h116l60-72h172M380 250h130l72-80M250 300h130l70-84M455 310h88l56-62" />
-            <path d="M300 92v118M345 80v116M390 100v108M160 258v48M520 126h104M500 178h126" />
-            <circle cx="80" cy="245" r="7"/><circle cx="126" cy="205" r="7"/><circle cx="582" cy="170" r="7"/><circle cx="624" cy="126" r="7"/><circle cx="250" cy="300" r="7"/>
+            <path class="trace trace-a" d="M72 248h184l48-58h140M120 204h112l62-72h174M372 252h130l72-82M238 300h132l70-84M452 312h86l60-64" />
+            <path class="trace trace-b" d="M302 90v116M346 78v118M390 98v108M158 258v48M520 126h104M500 178h126M102 282h84l34-42M420 150h68l36 36M560 218h58" />
+            <path class="trace trace-c" d="M286 236c44 0 46-28 86-28h92M208 172h54c28 0 42-28 76-28M502 278h72c20 0 28-18 48-18" />
+            <circle cx="72" cy="248" r="7"/><circle cx="120" cy="204" r="7"/><circle cx="574" cy="170" r="7"/><circle cx="624" cy="126" r="7"/><circle cx="238" cy="300" r="7"/><circle cx="520" cy="126" r="7"/><circle cx="420" cy="150" r="7"/><circle cx="560" cy="218" r="7"/>
           </svg>
         </div>
+        <span class="via v1"></span><span class="via v2"></span><span class="via v3"></span><span class="via v4"></span><span class="via v5"></span><span class="via v6"></span><span class="via v7"></span><span class="via v8"></span>
 
         <button class="lab-part camera-module" type="button" data-home-modal data-title="OpenMV 视觉模块" data-desc="摄像头模块用于颜色识别、目标追踪和视觉循迹，是博客里图像处理项目的入口。">
           <span class="camera-shell"><span class="lens"><i></i></span></span>
@@ -118,7 +125,7 @@
         </button>
 
         <button class="lab-part main-chip" type="button" data-home-modal data-title="A'Chao 主控核心" data-desc="以 MCU、RTOS、FPGA 和 TinyML 为主线，把硬件实践整理成长期技术博客。">
-          <span>A'Chao <em>♥</em></span>
+          <span>A'Chao <em>MCU</em></span>
         </button>
 
         <button class="lab-part ultrasonic" type="button" data-home-modal data-title="传感器接口" data-desc="整理摄像头、超声波、温湿度、光照等传感器的接线、驱动和排障经验。">

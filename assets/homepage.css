@@ -482,6 +482,7 @@ html[data-theme="dark"] .icon-btn {
   aspect-ratio: 1.48;
   justify-self: center;
   isolation: isolate;
+  perspective: 1200px;
 }
 
 .hero-lab::before {
@@ -498,22 +499,38 @@ html[data-theme="dark"] .icon-btn {
 .hero-lab::after {
   content: "";
   position: absolute;
-  inset: 25% 2% 7% 5%;
+  inset: 25% 2% 8% 5%;
   z-index: -2;
   border-radius: 40px;
   background:
+    radial-gradient(circle at 22% 24%, rgba(255, 255, 255, 0.62), transparent 18%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.48) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.48) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(145, 203, 255, 0.86), rgba(224, 235, 255, 0.66) 58%, rgba(255, 202, 228, 0.76));
-  background-size: 32px 32px, 32px 32px, auto;
-  box-shadow: 0 30px 70px rgba(62, 127, 207, 0.24);
-  transform: perspective(900px) rotateX(58deg) rotateZ(-7deg);
+    linear-gradient(135deg, rgba(111, 190, 255, 0.9), rgba(210, 232, 255, 0.72) 58%, rgba(255, 191, 223, 0.78));
+  background-size: auto, 32px 32px, 32px 32px, auto;
+  box-shadow:
+    0 34px 76px rgba(62, 127, 207, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.66),
+    inset 0 -18px 26px rgba(59, 126, 196, 0.08);
+  transform: rotateX(58deg) rotateZ(-7deg);
   transform-origin: center bottom;
+}
+
+.board-depth {
+  position: absolute;
+  inset: 33% 3% 4% 6%;
+  z-index: -3;
+  border-radius: 34px;
+  background: linear-gradient(135deg, rgba(87, 143, 206, 0.38), rgba(255, 158, 204, 0.24));
+  filter: blur(1px);
+  transform: rotateX(58deg) rotateZ(-7deg) translateY(22px);
+  transform-origin: center bottom;
+  pointer-events: none;
 }
 
 .lab-board {
   position: absolute;
-  inset: 24% 4% 5% 6%;
+  inset: 22% 4% 4% 6%;
   z-index: 0;
   pointer-events: none;
 }
@@ -521,23 +538,95 @@ html[data-theme="dark"] .icon-btn {
 .lab-board svg {
   width: 100%;
   height: 100%;
-  opacity: 0.78;
-  transform: perspective(900px) rotateX(58deg) rotateZ(-7deg);
+  opacity: 0.9;
+  transform: rotateX(58deg) rotateZ(-7deg);
   transform-origin: center bottom;
 }
 
 .lab-board path,
 .lab-board circle {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.9);
+  stroke: rgba(255, 255, 255, 0.92);
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
+.lab-board .trace-b {
+  stroke: rgba(124, 209, 255, 0.7);
+  stroke-width: 4;
+}
+
+.lab-board .trace-c {
+  stroke: rgba(255, 255, 255, 0.68);
+  stroke-width: 3;
+  stroke-dasharray: 12 12;
+}
+
 .lab-board circle {
   fill: #eaf7ff;
+  stroke: rgba(94, 148, 214, 0.32);
   stroke-width: 3;
+}
+
+.via {
+  position: absolute;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: radial-gradient(circle, #f7fbff 0 28%, #83c8ff 30% 52%, rgba(255, 255, 255, 0.48) 54%);
+  box-shadow: 0 5px 10px rgba(65, 120, 185, 0.12);
+  pointer-events: none;
+  transform: rotateZ(-7deg);
+}
+
+.v1 { left: 17%; top: 70%; }
+.v2 { left: 27%; top: 64%; }
+.v3 { left: 38%; top: 74%; }
+.v4 { left: 53%; top: 63%; }
+.v5 { right: 24%; top: 53%; }
+.v6 { right: 15%; top: 45%; }
+.v7 { right: 30%; bottom: 16%; }
+.v8 { left: 48%; bottom: 18%; }
+
+.edge-connector {
+  position: absolute;
+  left: 24%;
+  bottom: 15%;
+  z-index: 3;
+  display: flex;
+  gap: 7px;
+  padding: 5px 8px;
+  border-radius: 9px;
+  background: rgba(35, 50, 77, 0.18);
+  box-shadow: 0 12px 20px rgba(43, 88, 145, 0.12);
+  transform: rotateX(58deg) rotateZ(-7deg);
+  pointer-events: none;
+}
+
+.edge-connector i {
+  width: 9px;
+  height: 22px;
+  border-radius: 3px;
+  background: linear-gradient(#fff1be, #f5b75d);
+}
+
+.silk-label {
+  position: absolute;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0;
+  pointer-events: none;
+  transform: rotateX(58deg) rotateZ(-7deg);
+}
+
+.label-a { left: 18%; bottom: 24%; }
+.label-b { right: 20%; bottom: 30%; }
+.label-c { right: 34%; top: 49%; }
 }
 
 .lab-star,
@@ -756,11 +845,16 @@ html[data-theme="dark"] .icon-btn {
   height: 132px;
   place-items: center;
   color: #fff;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #26324b, #3e4d6d);
-  box-shadow: 0 24px 36px rgba(27, 43, 76, 0.28);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.12), transparent 26%),
+    linear-gradient(135deg, #1f2b44, #405274);
+  box-shadow:
+    0 24px 36px rgba(27, 43, 76, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -10px 18px rgba(13, 22, 38, 0.16);
   transform: rotate(-7deg);
-  font-size: 2rem;
+  font-size: 1.95rem;
   font-weight: 950;
 }
 
@@ -773,10 +867,10 @@ html[data-theme="dark"] .icon-btn {
 .main-chip::after {
   content: "";
   position: absolute;
-  left: -18px;
-  right: -18px;
-  height: 18px;
-  background: repeating-linear-gradient(90deg, transparent 0 9px, #dfe8f4 9px 18px, transparent 18px 28px);
+  left: -20px;
+  right: -20px;
+  height: 20px;
+  background: repeating-linear-gradient(90deg, transparent 0 8px, #dfe8f4 8px 17px, transparent 17px 27px);
 }
 
 .main-chip::before {
@@ -787,9 +881,36 @@ html[data-theme="dark"] .icon-btn {
   bottom: -18px;
 }
 
+.main-chip span::before,
+.main-chip span::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  bottom: -14px;
+  width: 18px;
+  background: repeating-linear-gradient(0deg, transparent 0 8px, #dfe8f4 8px 17px, transparent 17px 27px);
+}
+
+.main-chip span::before {
+  left: -19px;
+}
+
+.main-chip span::after {
+  right: -19px;
+}
+
 .main-chip em {
-  color: var(--pink);
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  padding: 4px 7px;
+  color: #7fd4ff;
+  border: 1px solid rgba(127, 212, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(12, 21, 37, 0.22);
+  font-size: 0.62rem;
   font-style: normal;
+  letter-spacing: 0.06em;
 }
 
 .ultrasonic {
