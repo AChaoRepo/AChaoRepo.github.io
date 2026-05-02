@@ -627,7 +627,6 @@ html[data-theme="dark"] .icon-btn {
 .label-a { left: 18%; bottom: 24%; }
 .label-b { right: 20%; bottom: 30%; }
 .label-c { right: 34%; top: 49%; }
-}
 
 .lab-star,
 .lab-code-bubble,
@@ -659,8 +658,8 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .lab-code-bubble {
-  left: 29%;
-  top: 11%;
+  left: 2%;
+  top: 24%;
   display: grid;
   width: 62px;
   height: 54px;
@@ -698,6 +697,8 @@ html[data-theme="dark"] .icon-btn {
   z-index: 5;
   color: var(--ink);
   background: none;
+  isolation: isolate;
+  touch-action: manipulation;
   transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -712,24 +713,34 @@ html[data-theme="dark"] .icon-btn {
   outline-offset: 4px;
 }
 
+.lab-part.is-active {
+  filter: saturate(1.14) drop-shadow(0 12px 18px rgba(47, 132, 255, 0.14));
+}
+
 .camera-module {
-  left: 12%;
-  top: 30%;
-  width: 108px;
-  height: 128px;
+  left: 16%;
+  top: 51%;
+  z-index: 6;
+  width: 122px;
+  height: 148px;
 }
 
 .camera-shell {
   position: absolute;
-  left: 14px;
-  top: 0;
+  left: 16px;
+  top: 8px;
   display: grid;
-  width: 74px;
-  height: 74px;
+  width: 86px;
+  height: 86px;
   place-items: center;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #61b5ff, #bfe3ff);
-  box-shadow: 0 14px 30px rgba(52, 114, 185, 0.28), inset 0 0 0 3px rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(21, 98, 177, 0.42);
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2), transparent 36%),
+    linear-gradient(135deg, #2f84ff, #66c5ff 58%, #bfe8ff);
+  box-shadow:
+    0 14px 30px rgba(52, 114, 185, 0.28),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.22);
 }
 
 .camera-shell::before {
@@ -737,73 +748,113 @@ html[data-theme="dark"] .icon-btn {
   position: absolute;
   left: 10px;
   top: 10px;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #2e69ab;
-  box-shadow: 48px 0 #2e69ab, 0 48px #2e69ab, 48px 48px #2e69ab;
+  background: #163d70;
+  box-shadow: 56px 0 #163d70, 0 56px #163d70, 56px 56px #163d70;
+}
+
+.camera-shell::after {
+  content: "OpenMV";
+  position: absolute;
+  left: 13px;
+  bottom: -22px;
+  color: #2f84ff;
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0;
 }
 
 .lens {
   display: grid;
-  width: 42px;
-  height: 42px;
+  position: relative;
+  width: 48px;
+  height: 48px;
   place-items: center;
   border-radius: 50%;
-  background: radial-gradient(circle at 62% 35%, #96c9ff 0 12%, #263859 14% 42%, #0c1426 44% 100%);
-  box-shadow: inset 0 0 0 7px #244b7b;
+  background:
+    radial-gradient(circle at 64% 34%, #b8ddff 0 9%, transparent 10%),
+    radial-gradient(circle, #0b1428 0 32%, #253b64 34% 48%, #090f1d 50% 100%);
+  box-shadow:
+    inset 0 0 0 6px #162846,
+    inset 0 0 0 11px #325b92,
+    0 8px 14px rgba(7, 18, 38, 0.26);
+}
+
+.lens::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 4px solid #1d3d68;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.16);
 }
 
 .lens i {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.42);
+  background: radial-gradient(circle at 45% 35%, rgba(255, 255, 255, 0.78), rgba(108, 179, 255, 0.32) 46%, rgba(2, 7, 18, 0.08) 50%);
 }
 
 .camera-pins {
   position: absolute;
-  left: 38px;
-  top: 70px;
+  left: 34px;
+  top: 98px;
   display: flex;
-  gap: 4px;
+  gap: 5px;
+}
+
+.camera-pins::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: -8px;
+  height: 9px;
+  border-radius: 3px;
+  background: #1d2f4d;
 }
 
 .camera-pins i {
   width: 7px;
-  height: 58px;
-  border-radius: 999px;
+  height: 42px;
+  border-radius: 2px;
   background: linear-gradient(#ffdf9d, #ef9453);
 }
 
 .robot-arm {
-  left: 5%;
-  top: 17%;
-  z-index: 8;
-  width: 214px;
-  height: 188px;
-  transform: scale(1.18) rotate(-12deg);
-  transform-origin: 54px 148px;
+  left: 4%;
+  top: 5%;
+  z-index: 7;
+  width: 230px;
+  height: 202px;
+  transform: scale(1.04) rotate(-12deg);
+  transform-origin: 58px 158px;
 }
 
 .robot-arm:hover,
 .robot-arm:focus-visible {
-  transform: translateY(-6px) scale(1.24) rotate(-12deg);
+  transform: translateY(-6px) scale(1.09) rotate(-12deg);
 }
 
 .arm-base {
   position: absolute;
-  left: 10px;
+  left: 12px;
   bottom: 0;
-  width: 74px;
-  height: 42px;
-  border-radius: 18px 18px 13px 13px;
+  z-index: 2;
+  width: 92px;
+  height: 58px;
+  border: 2px solid rgba(36, 64, 103, 0.34);
+  border-radius: 10px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.24), transparent 38%),
-    linear-gradient(135deg, #56a9ff, #9ad7ff 56%, #ffc0da);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28), transparent 34%),
+    linear-gradient(135deg, #427ec5, #80c9ff 58%, #dbefff);
   box-shadow:
     0 16px 28px rgba(60, 121, 190, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.48);
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    inset 0 -10px 16px rgba(20, 55, 96, 0.18);
 }
 
 .arm-base::before {
@@ -818,64 +869,115 @@ html[data-theme="dark"] .icon-btn {
   filter: blur(1px);
 }
 
+.arm-base::after {
+  content: "SERVO";
+  position: absolute;
+  left: 12px;
+  bottom: 9px;
+  color: rgba(18, 43, 76, 0.68);
+  font-size: 0.55rem;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
 .arm-base i {
   position: absolute;
-  left: 21px;
-  top: -22px;
-  width: 32px;
-  height: 32px;
-  border: 7px solid #273b60;
+  left: 25px;
+  top: -32px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border: 7px solid #1e3458;
   border-radius: 50%;
-  background: radial-gradient(circle at 62% 34%, #bfe9ff 0 20%, #6bbaff 22% 46%, #223654 48%);
+  background:
+    radial-gradient(circle at center, #eaf8ff 0 10%, #6ebcff 11% 24%, #1e3458 25% 31%, #a9dfff 32% 48%, #243a5d 50%);
   box-shadow: 0 10px 18px rgba(35, 67, 110, 0.18);
+}
+
+.arm-base i::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 17px;
+  z-index: -1;
+  width: 42px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1e3458, #3d92df);
+  box-shadow: 0 8px 12px rgba(30, 52, 88, 0.18);
+  transform: rotate(-34deg);
+  transform-origin: left center;
 }
 
 .arm-link {
   position: absolute;
+  z-index: 3;
   display: block;
-  height: 24px;
-  border-radius: 999px;
+  height: 26px;
+  border: 2px solid rgba(34, 70, 112, 0.26);
+  border-radius: 9px;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent 36%),
-    linear-gradient(135deg, #5bb0ff, #c7ebff);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.42), transparent 34%),
+    linear-gradient(135deg, #3d92df, #bfe9ff);
   box-shadow:
     0 14px 22px rgba(66, 126, 196, 0.2),
-    inset 0 0 0 2px rgba(255, 255, 255, 0.32);
+    inset 0 0 0 2px rgba(255, 255, 255, 0.24);
+}
+
+.arm-link::before,
+.arm-link::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(31, 55, 87, 0.42);
+  border-radius: 50%;
+  background: rgba(235, 249, 255, 0.72);
+}
+
+.arm-link::before {
+  left: 13px;
+}
+
+.arm-link::after {
+  right: 13px;
 }
 
 .arm-link i {
   position: absolute;
-  inset: 8px 14px auto;
-  height: 4px;
+  inset: 11px 32px auto;
+  height: 3px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.74);
 }
 
 .arm-link.lower {
-  left: 42px;
-  top: 72px;
-  width: 92px;
-  transform: rotate(-58deg);
+  left: 62px;
+  top: 104px;
+  width: 94px;
+  transform: rotate(-36deg);
   transform-origin: 8px 50%;
 }
 
 .arm-link.upper {
-  left: 86px;
-  top: 33px;
-  width: 78px;
-  transform: rotate(24deg);
+  left: 137px;
+  top: 62px;
+  width: 90px;
+  transform: rotate(31deg);
   transform-origin: 8px 50%;
 }
 
 .arm-joint {
   position: absolute;
+  z-index: 5;
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 7px solid #273b60;
+  width: 42px;
+  height: 42px;
+  border: 7px solid #1e3458;
   border-radius: 50%;
-  background: radial-gradient(circle at 58% 34%, #d7f2ff 0 16%, #71c0ff 18% 46%, #243a5d 48%);
+  background: radial-gradient(circle at 58% 34%, #f1fbff 0 13%, #74c3ff 14% 42%, #243a5d 44%);
   box-shadow: 0 12px 20px rgba(35, 67, 110, 0.2);
 }
 
@@ -888,68 +990,116 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .arm-joint.elbow {
-  left: 76px;
-  top: 48px;
+  left: 118px;
+  top: 46px;
 }
 
 .arm-joint.wrist {
-  right: 3px;
-  top: 50px;
-  width: 30px;
-  height: 30px;
+  right: -1px;
+  top: 90px;
+  width: 34px;
+  height: 34px;
   border-width: 6px;
 }
 
 .arm-claw {
   position: absolute;
-  right: -14px;
-  top: 70px;
-  width: 44px;
-  height: 38px;
-  transform: rotate(18deg);
+  right: -34px;
+  top: 112px;
+  z-index: 6;
+  width: 76px;
+  height: 64px;
+  transform: rotate(6deg);
 }
 
 .arm-claw::before {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 10px;
-  width: 24px;
-  height: 14px;
-  border-radius: 8px;
+  left: 20px;
+  top: 5px;
+  z-index: 3;
+  width: 36px;
+  height: 22px;
+  border-radius: 6px;
   background: linear-gradient(135deg, #263957, #42587c);
   box-shadow: 0 10px 18px rgba(35, 55, 88, 0.2);
 }
 
+.arm-claw::after {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 34px;
+  z-index: 1;
+  width: 28px;
+  height: 20px;
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 5px, rgba(227, 237, 248, 0.9) 5px 8px, transparent 8px 12px),
+    linear-gradient(135deg, #172237, #354765);
+  box-shadow:
+    0 8px 12px rgba(20, 36, 60, 0.22),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  transform: rotate(-8deg);
+}
+
 .arm-claw i {
   position: absolute;
-  top: 22px;
-  width: 20px;
-  height: 8px;
-  border-radius: 999px;
-  background: #253854;
+  top: 28px;
+  z-index: 4;
+  width: 34px;
+  height: 9px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #1d2f4d, #3e5275);
+  box-shadow: 0 6px 10px rgba(29, 47, 77, 0.16);
 }
 
 .arm-claw i:first-child {
-  left: 0;
-  transform: rotate(34deg);
+  left: 4px;
+  transform: rotate(54deg);
+  transform-origin: right center;
 }
 
 .arm-claw i:last-child {
-  right: 0;
-  transform: rotate(-34deg);
+  right: 4px;
+  transform: rotate(-54deg);
+  transform-origin: left center;
 }
 
 .code-display {
-  right: 16%;
-  top: 8%;
+  right: 11%;
+  top: 7%;
+  z-index: 7;
   width: 178px;
   height: 122px;
   padding: 25px 24px 16px;
-  border: 10px solid #6da7f8;
-  border-radius: 18px;
+  border: 10px solid #4d91ee;
+  border-radius: 12px;
   background: #172238;
   box-shadow: 0 18px 36px rgba(55, 112, 194, 0.28);
+}
+
+.code-display::before {
+  content: "";
+  position: absolute;
+  left: 72px;
+  bottom: -34px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(#cfe8ff, #7fb9ff);
+  clip-path: polygon(30% 0, 70% 0, 82% 100%, 18% 100%);
+}
+
+.code-display::after {
+  content: "";
+  position: absolute;
+  left: 49px;
+  bottom: -45px;
+  width: 76px;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5d9df2, #bfe7ff);
+  box-shadow: 0 10px 18px rgba(58, 114, 194, 0.2);
 }
 
 .window-dots {
@@ -1002,17 +1152,19 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .main-chip {
-  left: 41%;
-  top: 45%;
+  left: 42%;
+  top: 47%;
+  z-index: 8;
   display: grid;
   width: 190px;
   height: 132px;
   place-items: center;
   color: #fff;
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
   background:
-    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.12), transparent 26%),
-    linear-gradient(135deg, #1f2b44, #405274);
+    radial-gradient(circle at 16px 16px, rgba(255, 255, 255, 0.62) 0 3px, transparent 4px),
+    linear-gradient(135deg, #141d2e, #273650 58%, #162133);
   box-shadow:
     0 24px 36px rgba(27, 43, 76, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.12),
@@ -1031,36 +1183,36 @@ html[data-theme="dark"] .icon-btn {
 .main-chip::after {
   content: "";
   position: absolute;
-  left: -20px;
-  right: -20px;
-  height: 20px;
-  background: repeating-linear-gradient(90deg, transparent 0 8px, #dfe8f4 8px 17px, transparent 17px 27px);
+  left: -18px;
+  right: -18px;
+  height: 18px;
+  background: repeating-linear-gradient(90deg, transparent 0 7px, #d7e3f2 7px 15px, transparent 15px 25px);
 }
 
 .main-chip::before {
-  top: -18px;
+  top: -16px;
 }
 
 .main-chip::after {
-  bottom: -18px;
+  bottom: -16px;
 }
 
 .main-chip span::before,
 .main-chip span::after {
   content: "";
   position: absolute;
-  top: -14px;
-  bottom: -14px;
-  width: 18px;
-  background: repeating-linear-gradient(0deg, transparent 0 8px, #dfe8f4 8px 17px, transparent 17px 27px);
+  top: -12px;
+  bottom: -12px;
+  width: 16px;
+  background: repeating-linear-gradient(0deg, transparent 0 7px, #d7e3f2 7px 15px, transparent 15px 25px);
 }
 
 .main-chip span::before {
-  left: -19px;
+  left: -17px;
 }
 
 .main-chip span::after {
-  right: -19px;
+  right: -17px;
 }
 
 .main-chip em {
@@ -1078,71 +1230,125 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .ultrasonic {
-  right: 5%;
-  top: 43%;
+  right: 4%;
+  top: 44%;
+  z-index: 6;
   display: flex;
   width: 126px;
   height: 72px;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #6bbaff, #cbeaff);
-  box-shadow: 0 18px 34px rgba(69, 130, 204, 0.22);
+  border: 2px solid rgba(32, 106, 188, 0.36);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 9px 9px, #dff3ff 0 3px, transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) 9px, #dff3ff 0 3px, transparent 4px),
+    radial-gradient(circle at 9px calc(100% - 9px), #dff3ff 0 3px, transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px), #dff3ff 0 3px, transparent 4px),
+    linear-gradient(135deg, #2f84ff, #83d0ff);
+  box-shadow: 0 18px 34px rgba(69, 130, 204, 0.22), inset 0 0 0 2px rgba(255, 255, 255, 0.16);
+}
+
+.ultrasonic::before {
+  content: "HC-SR04";
+  position: absolute;
+  left: 34px;
+  top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.5rem;
+  font-weight: 950;
+}
+
+.ultrasonic::after {
+  content: "";
+  position: absolute;
+  left: 41px;
+  bottom: -10px;
+  width: 44px;
+  height: 12px;
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(90deg, #f6c96f 0 7px, transparent 7px 11px),
+    #253854;
 }
 
 .ultrasonic span {
   display: grid;
+  position: relative;
   width: 44px;
   height: 44px;
   place-items: center;
   border-radius: 50%;
-  background: #1f3150;
+  background:
+    radial-gradient(circle, #e8f4ff 0 24%, #617ea2 26% 35%, #273850 36% 100%);
+  box-shadow:
+    inset 0 0 0 5px #1d314f,
+    inset 0 0 0 9px rgba(255, 255, 255, 0.22),
+    0 8px 14px rgba(17, 45, 82, 0.2);
 }
 
 .ultrasonic i {
-  width: 28px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: #8bc5ff;
+  background:
+    repeating-radial-gradient(circle, #7891ad 0 2px, #263852 2px 4px);
 }
 
 .led-part {
-  right: 17%;
-  bottom: 18%;
-  width: 48px;
-  height: 70px;
+  right: 18%;
+  bottom: 16%;
+  z-index: 6;
+  width: 54px;
+  height: 82px;
 }
 
 .led-part span {
   position: absolute;
   left: 10px;
   top: 0;
-  width: 30px;
-  height: 36px;
-  border-radius: 16px 16px 9px 9px;
-  background: linear-gradient(135deg, #ff7cac, #ffb3cf);
-  box-shadow: 0 0 24px rgba(255, 118, 171, 0.36);
+  width: 34px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.54);
+  border-radius: 50% 50% 42% 42%;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.82) 0 10%, transparent 12%),
+    linear-gradient(135deg, rgba(255, 116, 160, 0.82), rgba(255, 177, 205, 0.72));
+  box-shadow: 0 0 24px rgba(255, 118, 171, 0.36), inset 0 -8px 12px rgba(190, 53, 102, 0.2);
+}
+
+.led-part span::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(255, 122, 169, 0.7);
 }
 
 .led-part i {
   position: absolute;
-  top: 34px;
+  top: 42px;
   width: 4px;
-  height: 34px;
   border-radius: 99px;
-  background: #78849b;
+  background: linear-gradient(#dfe7f0, #7f8aa0);
 }
 
 .led-part i:nth-child(2) {
-  left: 18px;
+  left: 19px;
+  height: 40px;
 }
 
 .led-part i:nth-child(3) {
-  right: 17px;
+  right: 18px;
+  height: 32px;
 }
 
 .mini-chip {
+  z-index: 4;
   width: 54px;
   height: 42px;
   border-radius: 9px;
@@ -1169,14 +1375,14 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .chip-a {
-  left: 23%;
-  bottom: 28%;
+  left: 33%;
+  bottom: 17%;
   transform: rotate(-8deg);
 }
 
 .chip-b {
-  right: 28%;
-  bottom: 10%;
+  right: 30%;
+  bottom: 8%;
   transform: rotate(11deg);
 }
 
@@ -1791,6 +1997,8 @@ html[data-theme="dark"] .icon-btn {
   }
 
   .code-display {
+    right: 8%;
+    top: 7%;
     width: 142px;
     height: 98px;
     padding: 20px 18px 12px;
@@ -1798,36 +2006,74 @@ html[data-theme="dark"] .icon-btn {
   }
 
   .main-chip {
-    width: 146px;
-    height: 104px;
-    font-size: 1.48rem;
+    left: 38%;
+    top: 55%;
+    width: 130px;
+    height: 94px;
+    font-size: 1.32rem;
   }
 
   .ultrasonic {
-    width: 96px;
-    height: 58px;
+    right: 0;
+    top: 43%;
+    width: 86px;
+    height: 52px;
   }
 
   .ultrasonic span {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .ultrasonic i {
+    width: 22px;
+    height: 15px;
   }
 
   .camera-module {
-    transform: scale(0.84);
+    left: 13%;
+    top: 58%;
+    transform: scale(0.72);
     transform-origin: left top;
   }
 
+  .camera-module:hover,
+  .camera-module:focus-visible {
+    transform: translateY(-4px) scale(0.76);
+  }
+
   .robot-arm {
-    left: 3%;
-    top: 18%;
-    transform: scale(0.92) rotate(-12deg);
-    transform-origin: 54px 148px;
+    left: 1%;
+    top: 8%;
+    transform: scale(0.62) rotate(-12deg);
+    transform-origin: 58px 158px;
   }
 
   .robot-arm:hover,
   .robot-arm:focus-visible {
-    transform: translateY(-5px) scale(0.96) rotate(-12deg);
+    transform: translateY(-4px) scale(0.66) rotate(-12deg);
+  }
+
+  .led-part {
+    right: 15%;
+    bottom: 15%;
+    transform: scale(0.82);
+    transform-origin: center bottom;
+  }
+
+  .led-part:hover,
+  .led-part:focus-visible {
+    transform: translateY(-4px) scale(0.86);
+  }
+
+  .chip-a {
+    left: 34%;
+    bottom: 16%;
+  }
+
+  .chip-b {
+    right: 27%;
+    bottom: 7%;
   }
 
   .article {
