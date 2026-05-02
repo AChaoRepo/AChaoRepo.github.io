@@ -202,6 +202,43 @@
     }
   });
 
+  const heroTopicButtons = document.querySelectorAll("[data-hero-topic]");
+  const heroTopicTitle = document.getElementById("heroTopicTitle");
+  const heroTopicDesc = document.getElementById("heroTopicDesc");
+  const heroTopicStack = document.getElementById("heroTopicStack");
+
+  function syncHeroTopic(button) {
+    if (!button || !heroTopicTitle || !heroTopicDesc || !heroTopicStack) {
+      return;
+    }
+
+    heroTopicButtons.forEach((node) => {
+      const isActive = node === button;
+      node.classList.toggle("is-active", isActive);
+      node.setAttribute("aria-selected", String(isActive));
+    });
+
+    heroTopicTitle.textContent = button.dataset.title || "";
+    heroTopicDesc.textContent = button.dataset.desc || "";
+    heroTopicStack.replaceChildren();
+    (button.dataset.stack || "").split("|").filter(Boolean).forEach((item) => {
+      const chip = document.createElement("span");
+      chip.textContent = item;
+      heroTopicStack.appendChild(chip);
+    });
+
+    document.querySelectorAll(".lab-part.is-highlighted").forEach((node) => {
+      node.classList.remove("is-highlighted");
+    });
+    const target = button.dataset.target ? document.querySelector(button.dataset.target) : null;
+    target?.classList.add("is-highlighted");
+  }
+
+  heroTopicButtons.forEach((button) => {
+    button.addEventListener("click", () => syncHeroTopic(button));
+  });
+  syncHeroTopic(document.querySelector("[data-hero-topic].is-active") || heroTopicButtons[0]);
+
   const homeModal = document.getElementById("homeModal");
   const homeModalTitle = document.getElementById("homeModalTitle");
   const homeModalDesc = document.getElementById("homeModalDesc");

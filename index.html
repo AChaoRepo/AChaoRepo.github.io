@@ -79,15 +79,30 @@
         <div class="eyebrow">Hi! 我是 A'Chao</div>
         <h1 class="hero-title" id="hero-title">用<span class="blue">代码</span>连接硬件，<br>用<span class="pink">调试</span>记录成长</h1>
         <p class="hero-desc">分享嵌入式系统学习与实践的点滴，记录 OpenMV、STM32、FPGA、传感器、轻量化 AI 部署等方向的项目经验。</p>
+        <div class="hero-console" aria-label="博客方向切换">
+          <div class="topic-tabs" role="tablist" aria-label="技术方向">
+            <button class="topic-tab is-active" type="button" role="tab" aria-selected="true" data-hero-topic data-title="嵌入式系统" data-desc="从最小系统板、外设驱动到通信总线，把硬件连线、寄存器配置和调试过程整理成可复盘的文章。" data-stack="STM32|RTOS|GPIO|UART" data-target=".main-chip">嵌入式</button>
+            <button class="topic-tab" type="button" role="tab" aria-selected="false" data-hero-topic data-title="视觉 AI 与边缘部署" data-desc="围绕 OpenMV、轻量化模型和传感器融合，记录图像识别、目标追踪和端侧推理的实验路径。" data-stack="OpenMV|TinyML|Camera|TFLite" data-target=".camera-module">视觉 AI</button>
+            <button class="topic-tab" type="button" role="tab" aria-selected="false" data-hero-topic data-title="调试复盘与项目日志" data-desc="把串口日志、波形、错误定位和项目踩坑沉淀下来，形成可以反复查阅的工程笔记。" data-stack="Build Log|Debug|State Machine|Checklist" data-target=".code-display">调试复盘</button>
+          </div>
+          <div class="topic-card" aria-live="polite">
+            <span class="topic-kicker">当前聚焦</span>
+            <strong id="heroTopicTitle">嵌入式系统</strong>
+            <p id="heroTopicDesc">从最小系统板、外设驱动到通信总线，把硬件连线、寄存器配置和调试过程整理成可复盘的文章。</p>
+            <div class="topic-stack" id="heroTopicStack" aria-label="相关技术栈">
+              <span>STM32</span><span>RTOS</span><span>GPIO</span><span>UART</span>
+            </div>
+          </div>
+        </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="archive.html">探索文章 →</a>
           <a class="btn btn-secondary" href="projects.html">查看项目</a>
         </div>
         <div class="stats" aria-label="博客统计">
-          <div class="stat"><i class="stat-icon">文</i><div><span>文章</span><strong>42+</strong></div></div>
-          <div class="stat"><i class="stat-icon">项</i><div><span>项目</span><strong>18+</strong></div></div>
-          <div class="stat"><i class="stat-icon">学</i><div><span>学习天数</span><strong>365+</strong></div></div>
-          <div class="stat"><i class="stat-icon">调</i><div><span>调试次数</span><strong>2333+</strong></div></div>
+          <button class="stat" type="button" data-home-modal data-title="文章库" data-desc="文章部分会持续整理嵌入式学习、硬件调试、图像识别和项目复盘内容。"><i class="stat-icon">文</i><div><span>文章</span><strong>42+</strong></div></button>
+          <button class="stat" type="button" data-home-modal data-title="项目集" data-desc="项目部分聚焦 OpenMV 小车、STM32 最小系统板、Verilog CPU、传感器环境监测等实践。"><i class="stat-icon">项</i><div><span>项目</span><strong>18+</strong></div></button>
+          <button class="stat" type="button" data-home-modal data-title="长期学习记录" data-desc="学习天数代表持续记录、复盘和迭代的节奏，目标是把零散经验沉淀成长期资料库。"><i class="stat-icon">学</i><div><span>学习天数</span><strong>365+</strong></div></button>
+          <button class="stat" type="button" data-home-modal data-title="调试经验" data-desc="调试次数象征串口、波形、外设、编译和部署过程中的问题定位经验。"><i class="stat-icon">调</i><div><span>调试次数</span><strong>2333+</strong></div></button>
         </div>
       </div>
 
