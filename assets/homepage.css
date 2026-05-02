@@ -1297,9 +1297,9 @@ html[data-theme="dark"] .icon-btn {
 }
 
 .led-part {
-  right: 18%;
-  bottom: 16%;
-  z-index: 6;
+  right: 9%;
+  bottom: 4%;
+  z-index: 9;
   width: 54px;
   height: 82px;
 }
@@ -2055,8 +2055,9 @@ html[data-theme="dark"] .icon-btn {
   }
 
   .led-part {
-    right: 15%;
-    bottom: 15%;
+    right: 8%;
+    bottom: 5%;
+    z-index: 9;
     transform: scale(0.82);
     transform-origin: center bottom;
   }
